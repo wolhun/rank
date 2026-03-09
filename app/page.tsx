@@ -1,13 +1,11 @@
 import { HeroSection } from "@/components/sections/hero-section"
-import { HeroSectionB } from "@/components/sections/hero-section-b"
 import { TrustBar } from "@/components/sections/trust-bar"
-import { VideoSection } from "@/components/sections/video-section"
 import { VideoSectionB } from "@/components/sections/video-section-b"
+import { StorytellingSections } from "@/components/sections/storytelling-sections"
 import { StorySection } from "@/components/sections/story-section"
 import { StorySectionB } from "@/components/sections/story-section-b"
 import { OldVsNewSection } from "@/components/sections/old-vs-new-section"
 import { LiveResearchSection } from "@/components/sections/live-research-section"
-import { WhatWeDoSection } from "@/components/sections/what-we-do-section"
 import { ForWhoSection } from "@/components/sections/for-who-section"
 import { HowItWorksSection } from "@/components/sections/how-it-works-section"
 import { BenefitsSection } from "@/components/sections/benefits-section"
@@ -31,15 +29,13 @@ export default function Home() {
       </div>
       <SiteNavbar />
       <HeroSection />
-      <HeroSectionB />
       <TrustBar />
-      <VideoSection />
       <VideoSectionB />
+      <StorytellingSections />
       <StorySection />
       <StorySectionB />
       <LiveResearchSection />
       <OldVsNewSection />
-      <WhatWeDoSection />
       <ForWhoSection />
       <BenefitsSection />
       <HowItWorksSection />
