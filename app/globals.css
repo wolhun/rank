@@ -148,4 +148,24 @@
     opacity: 0.5;
     pointer-events: none;
   }
+
+  @keyframes arrowReveal {
+    0% {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .arrow-reveal {
+    opacity: 0;
+    animation: arrowReveal 650ms ease forwards;
+  }
+
+  .arrow-reveal-delay-2 {
+    animation-delay: 260ms;
+  }
 }

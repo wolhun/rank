@@ -1,34 +1,36 @@
+import { Play } from "lucide-react"
+
 export function VideoSection() {
   return (
     <section id="video" className="py-20 lg:py-24">
       <div className="section-shell">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-accent">Video</p>
+        <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-semibold leading-tight text-foreground md:text-4xl">
             See how companies get recommended by AI
           </h2>
         </div>
+      </div>
 
-        <div className="mx-auto mt-10 grid max-w-5xl gap-8 lg:grid-cols-[1.1fr_1fr]">
-          <div className="aspect-video rounded-2xl border border-border bg-card shadow-[0_20px_60px_-45px_rgba(6,13,23,0.55)]" />
-          <div className="rounded-2xl border border-border bg-card p-6">
-            <p className="text-sm leading-relaxed text-muted-foreground">
-              More and more customers start their search by asking AI.
-            </p>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              Instead of browsing websites, they ask a question. AI gives a direct answer and recommends a few
-              companies.
-            </p>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              Those companies become the shortlist. If your business is not mentioned, you are invisible.
-            </p>
-            <p className="mt-3 text-sm font-medium leading-relaxed text-foreground">
-              This service helps your company become one of the recommended options.
-            </p>
+      <div className="relative left-1/2 mt-10 w-screen -translate-x-1/2 px-4 md:px-8">
+        <div className="mx-auto w-full max-w-[1600px]">
+          <div className="group relative aspect-video overflow-hidden rounded-[1.75rem] border border-border/70 bg-card shadow-[0_34px_110px_-60px_rgba(7,14,26,0.7)]">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_24%_18%,rgba(14,42,71,0.26),transparent_42%),radial-gradient(circle_at_80%_74%,rgba(200,169,107,0.22),transparent_38%),linear-gradient(135deg,#f8f8f6_0%,#f1f2f5_100%)]" />
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(9,20,35,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(9,20,35,0.04)_1px,transparent_1px)] bg-[length:42px_42px] opacity-65" />
+
+            <button
+              type="button"
+              className="absolute left-1/2 top-1/2 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/35 bg-white/30 text-foreground backdrop-blur-md transition-transform duration-300 group-hover:scale-105"
+              aria-label="Play video demo"
+            >
+              <Play className="ml-1 h-8 w-8" />
+            </button>
+
+            <div className="absolute bottom-5 left-5 right-5 rounded-xl border border-border/70 bg-background/78 px-4 py-3 backdrop-blur">
+              <p className="text-sm font-medium text-foreground">AI recommendation demo preview</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
   )
 }
-

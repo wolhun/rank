@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { ArrowRight, Play } from "lucide-react"
+import { ArrowRight, Check } from "lucide-react"
 import { HeroRecommendationDemo } from "@/components/hero-recommendation-demo"
 import { Button } from "@/components/ui/button"
 
@@ -34,8 +34,6 @@ const platforms = [
     ),
   },
 ]
-
-const badges = ["No upfront payment", "One fixed price", "Works for ChatGPT and AI search"]
 
 export function HeroSection() {
   const [activePlatform, setActivePlatform] = useState(0)
@@ -78,19 +76,25 @@ export function HeroSection() {
 
             <div className="space-y-5">
               <h1 className="text-balance text-4xl font-semibold leading-[1.06] tracking-tight text-foreground md:text-5xl lg:text-[3.45rem]">
-                Make{" "}
-                <span className="relative inline-block">
-                  <span className="relative z-10 transition-colors duration-500" style={{ color: platform.color }}>
-                    AI
-                  </span>
-                  <span className="absolute bottom-1 left-0 -z-0 h-3 w-full opacity-25" style={{ backgroundColor: platform.color }} />
-                </span>{" "}
-                recommend your business.
+                Make AI recommend your business. Pay after results.
               </h1>
               <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">
                 When people ask AI which company to choose, your business appears in the answer.
               </p>
-              <p className="text-base font-medium text-foreground">Pay only after results. No upfront payment.</p>
+              <div className="space-y-2 pt-1">
+                <p className="flex items-center gap-2 text-base font-medium text-foreground">
+                  <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary/[0.10] text-primary">
+                    <Check className="h-3.5 w-3.5" />
+                  </span>
+                  Pay only after results.
+                </p>
+                <p className="flex items-center gap-2 text-base font-medium text-foreground">
+                  <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary/[0.10] text-primary">
+                    <Check className="h-3.5 w-3.5" />
+                  </span>
+                  No upfront payment.
+                </p>
+              </div>
             </div>
 
             <div className="flex flex-wrap gap-3">
@@ -98,21 +102,6 @@ export function HeroSection() {
                 Check if your business qualifies
                 <ArrowRight className="h-4 w-4" />
               </Button>
-              <Button size="lg" variant="ghost" className="h-12 gap-2 px-6 text-base">
-                <Play className="h-4 w-4" />
-                Contact
-              </Button>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-3 pt-2">
-              {badges.map((badge) => (
-                <span
-                  key={badge}
-                  className="inline-flex items-center rounded-full border border-border/80 bg-card/80 px-3 py-1.5 text-sm font-medium text-foreground"
-                >
-                  {badge}
-                </span>
-              ))}
             </div>
           </div>
 
@@ -124,4 +113,3 @@ export function HeroSection() {
     </section>
   )
 }
-

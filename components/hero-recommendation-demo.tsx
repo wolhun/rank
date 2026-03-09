@@ -2,8 +2,7 @@
 
 import { type ReactNode, useEffect, useMemo, useState } from "react"
 
-const QUERY_TEXT = "what is the best botox service in Miami"
-const ITEM_HEIGHT = 96
+const ITEM_HEIGHT = 124
 const ITEM_GAP = 12
 
 type DemoPlatform = {
@@ -16,33 +15,80 @@ type DemoProps = {
   platform: DemoPlatform
 }
 
-const ITEMS = [
+type DemoItem = {
+  id: "a" | "b" | "your"
+  name: string
+  description?: string
+  benefits?: string[]
+}
+
+type Scenario = {
+  query: string
+  items: DemoItem[]
+}
+
+const SCENARIOS: Scenario[] = [
   {
-    id: "coastal",
-    name: "Coastal Aesthetics",
-    description: "Strong local reviews and broad service list.",
+    query: "what is the best botox service in Miami",
+    items: [
+      { id: "a", name: "Coastal Aesthetics", description: "Strong local reviews and broad service list." },
+      { id: "b", name: "Elite Skin Studio", description: "Popular for short wait times and downtown location." },
+      {
+        id: "your",
+        name: "Your Business",
+        benefits: ["Board-certified staff", "Natural-looking results", "500+ five-star reviews"],
+      },
+    ],
   },
   {
-    id: "elite",
-    name: "Elite Skin Studio",
-    description: "Popular for short wait times and downtown location.",
+    query: "who is the best basement waterproofing company in Toronto",
+    items: [
+      { id: "a", name: "NorthShield Waterproofing", description: "Known for rapid response and local crews." },
+      { id: "b", name: "DryCore Experts", description: "Large portfolio across residential projects." },
+      {
+        id: "your",
+        name: "Your Business",
+        benefits: ["Leak diagnostics in 24h", "Licensed technicians", "Long-term warranty coverage"],
+      },
+    ],
   },
   {
-    id: "your",
-    name: "Your Business",
-    benefits: ["Board-certified staff", "Natural-looking results", "500+ five-star reviews"],
+    query: "best office cleaning service in Chicago",
+    items: [
+      { id: "a", name: "Skyline Cleaning Co.", description: "Popular with multi-floor office buildings." },
+      { id: "b", name: "Loop Janitorial Group", description: "Flexible schedules and solid contract terms." },
+      {
+        id: "your",
+        name: "Your Business",
+        benefits: ["After-hours service", "Consistent QA reports", "Trusted by 200+ business clients"],
+      },
+    ],
   },
-] as const
+  {
+    query: "best cosmetic dentist in Los Angeles",
+    items: [
+      { id: "a", name: "West LA Smile Studio", description: "Premium clinic with strong social proof." },
+      { id: "b", name: "Beverly Dental Lab", description: "High visibility for smile makeover procedures." },
+      {
+        id: "your",
+        name: "Your Business",
+        benefits: ["Digital smile previews", "Experienced cosmetic team", "5-star patient satisfaction trend"],
+      },
+    ],
+  },
+]
 
 const sleep = (ms: number) => new Promise((resolve) => window.setTimeout(resolve, ms))
 
 export function HeroRecommendationDemo({ platform }: DemoProps) {
+  const [scenarioIndex, setScenarioIndex] = useState(0)
   const [queryText, setQueryText] = useState("")
   const [showOutput, setShowOutput] = useState(false)
   const [visibleCount, setVisibleCount] = useState(0)
   const [promoted, setPromoted] = useState(false)
   const [showOverlay, setShowOverlay] = useState(false)
   const [ready, setReady] = useState(false)
+  const scenario = SCENARIOS[scenarioIndex]
 
   const prefersReducedMotion = useMemo(() => {
     if (typeof window === "undefined") return true
@@ -51,9 +97,9 @@ export function HeroRecommendationDemo({ platform }: DemoProps) {
 
   const orderMap = useMemo(() => {
     if (!promoted) {
-      return { coastal: 0, elite: 1, your: 2 }
+      return { a: 0, b: 1, your: 2 }
     }
-    return { your: 0, coastal: 1, elite: 2 }
+    return { your: 0, a: 1, b: 2 }
   }, [promoted])
 
   useEffect(() => setReady(true), [])
@@ -62,18 +108,21 @@ export function HeroRecommendationDemo({ platform }: DemoProps) {
     if (!ready) return
 
     let alive = true
+    let localScenarioIndex = 0
 
     async function run() {
       while (alive) {
+        const currentScenario = SCENARIOS[localScenarioIndex]
+        setScenarioIndex(localScenarioIndex)
         setQueryText("")
         setShowOutput(false)
         setVisibleCount(0)
         setPromoted(false)
         setShowOverlay(false)
 
-        for (let i = 0; i < QUERY_TEXT.length; i += 1) {
+        for (let i = 0; i < currentScenario.query.length; i += 1) {
           if (!alive) return
-          setQueryText(QUERY_TEXT.slice(0, i + 1))
+          setQueryText(currentScenario.query.slice(0, i + 1))
           await sleep(30)
         }
 
@@ -90,11 +139,13 @@ export function HeroRecommendationDemo({ platform }: DemoProps) {
         await sleep(950)
         setShowOverlay(true)
         await sleep(2100)
+        localScenarioIndex = (localScenarioIndex + 1) % SCENARIOS.length
       }
     }
 
     if (prefersReducedMotion) {
-      setQueryText(QUERY_TEXT)
+      setScenarioIndex(0)
+      setQueryText(SCENARIOS[0].query)
       setShowOutput(true)
       setVisibleCount(3)
       setPromoted(true)
@@ -133,9 +184,9 @@ export function HeroRecommendationDemo({ platform }: DemoProps) {
 
         <div
           className="relative"
-          style={{ height: `${ITEM_HEIGHT * ITEMS.length + ITEM_GAP * (ITEMS.length - 1)}px` }}
+          style={{ height: `${ITEM_HEIGHT * scenario.items.length + ITEM_GAP * (scenario.items.length - 1)}px` }}
         >
-          {ITEMS.map((item, idx) => {
+          {scenario.items.map((item, idx) => {
             const targetIndex = orderMap[item.id as keyof typeof orderMap]
             const y = targetIndex * (ITEM_HEIGHT + ITEM_GAP)
             const visible = idx < visibleCount
@@ -143,7 +194,7 @@ export function HeroRecommendationDemo({ platform }: DemoProps) {
             return (
               <div
                 key={item.id}
-                className={`absolute left-0 right-0 flex min-h-24 gap-3 rounded-xl border p-3.5 transition-[transform,opacity,box-shadow,border-color,background-color] duration-700 ease-[cubic-bezier(.22,.61,.36,1)] ${
+                className={`absolute left-0 right-0 z-0 flex h-[124px] gap-3 overflow-hidden rounded-xl border p-3.5 transition-[transform,opacity,box-shadow,border-color,background-color] duration-700 ease-[cubic-bezier(.22,.61,.36,1)] ${
                   isYourBusiness ? "border-primary/35 bg-primary/[0.05]" : "border-border/80 bg-background/70"
                 } ${visible ? "opacity-100" : "opacity-0"}`}
                 style={{ transform: `translateY(${y}px)` }}
@@ -153,11 +204,11 @@ export function HeroRecommendationDemo({ platform }: DemoProps) {
                 </span>
                 <div>
                   <p className="font-semibold text-foreground">{item.name}</p>
-                  {"description" in item ? (
+                  {item.description ? (
                     <p className="mt-0.5 text-sm text-muted-foreground">{item.description}</p>
                   ) : (
                     <ul className="mt-1.5 space-y-0.5 text-sm text-foreground/90">
-                      {item.benefits.map((benefit) => (
+                      {item.benefits?.map((benefit) => (
                         <li key={benefit} className="flex items-center gap-1.5">
                           <span className="inline-block h-1 w-1 rounded-full bg-primary" />
                           {benefit}
