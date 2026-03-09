@@ -16,7 +16,7 @@ export function PricingSection() {
       <div className="absolute top-20 left-20 w-96 h-96 rounded-full bg-primary/5 blur-3xl" />
       <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-muted blur-3xl" />
       
-      <div className="container mx-auto px-6 relative">
+      <div className="section-shell relative">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <p className="text-primary font-medium mb-4">Cennik</p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight mb-6">

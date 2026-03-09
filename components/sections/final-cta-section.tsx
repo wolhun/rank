@@ -8,7 +8,7 @@ export function FinalCTASection() {
       <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-primary-foreground/5 blur-3xl" />
       <div className="absolute bottom-0 right-1/4 w-80 h-80 rounded-full bg-primary-foreground/10 blur-3xl" />
       
-      <div className="container mx-auto px-6 relative">
+      <div className="section-shell relative">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight mb-6 text-primary-foreground">
             Sprawdź, czy Twoja firma kwalifikuje się do programu
@@ -34,7 +34,7 @@ export function FinalCTASection() {
       </div>
       
       {/* Footer */}
-      <div className="container mx-auto px-6 mt-20 pt-10 border-t border-primary-foreground/10">
+      <div className="section-shell mt-20 pt-10 border-t border-primary-foreground/10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-primary-foreground/60 text-sm">
           <p>AI Visibility - Bądź widoczny w odpowiedziach AI</p>
           <div className="flex items-center gap-6">

@@ -17,17 +17,17 @@ const notFit = [
 export function ForWhoSection() {
   return (
     <section className="py-20 lg:py-28 bg-secondary/40">
-      <div className="container mx-auto px-6">
-        <div className="max-w-xl mb-14">
+      <div className="section-shell">
+        <div className="mx-auto mb-14 max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-wider text-accent mb-3">Dopasowanie</p>
           <h2 className="text-3xl md:text-4xl font-semibold leading-tight text-foreground">
             Dla kogo jest ta usługa
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 max-w-4xl">
+        <div className="mx-auto grid max-w-5xl gap-8 lg:grid-cols-2">
           {/* Good fit */}
-          <div className="bg-card border border-border rounded-xl p-6">
+          <div className="rounded-2xl border border-border bg-card p-7">
             <h3 className="font-semibold text-foreground mb-5">Ta usługa ma sens, jeśli...</h3>
             <ul className="space-y-3">
               {goodFit.map((item, index) => (
@@ -42,7 +42,7 @@ export function ForWhoSection() {
           </div>
 
           {/* Not fit */}
-          <div className="bg-secondary/50 border border-border rounded-xl p-6">
+          <div className="rounded-2xl border border-border bg-secondary/55 p-7">
             <h3 className="font-semibold text-foreground mb-5">Może nie być dobrym fit, jeśli...</h3>
             <ul className="space-y-3">
               {notFit.map((item, index) => (

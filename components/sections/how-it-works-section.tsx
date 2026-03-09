@@ -24,26 +24,27 @@ const steps = [
 export function HowItWorksSection() {
   return (
     <section className="py-20 lg:py-28">
-      <div className="container mx-auto px-6">
-        <div className="max-w-xl mb-14">
+      <div className="section-shell">
+        <div className="mx-auto mb-14 max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-wider text-accent mb-3">Proces</p>
           <h2 className="text-3xl md:text-4xl font-semibold leading-tight text-foreground">
             Jak wygląda współpraca
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl">
+        <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, index) => (
-            <div key={index} className="relative">
-              <div className="flex items-baseline gap-3 mb-3">
-                <span className="text-5xl font-semibold text-border">{step.number}</span>
+            <div key={index} className="relative rounded-2xl border border-border bg-card p-6">
+              <div className="mb-4 flex items-center gap-3">
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-primary/30 bg-primary/[0.06] text-sm font-semibold text-primary">
+                  {step.number}
+                </span>
+                {index < steps.length - 1 && (
+                  <span className="hidden h-px flex-1 bg-border lg:block" />
+                )}
               </div>
-              <h3 className="font-semibold text-foreground mb-2">{step.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
-              
-              {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-6 left-full w-full h-px bg-border -translate-x-6" />
-              )}
+              <h3 className="mb-2 text-lg font-semibold text-foreground">{step.title}</h3>
+              <p className="text-sm leading-relaxed text-muted-foreground">{step.description}</p>
             </div>
           ))}
         </div>

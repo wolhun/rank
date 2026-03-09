@@ -28,15 +28,15 @@ const benefits = [
 export function BenefitsSection() {
   return (
     <section className="py-20 lg:py-28 bg-secondary/40">
-      <div className="container mx-auto px-6">
-        <div className="max-w-xl mb-14">
+      <div className="section-shell">
+        <div className="mx-auto mb-14 max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-wider text-accent mb-3">Korzyści</p>
           <h2 className="text-3xl md:text-4xl font-semibold leading-tight text-foreground">
             Co zyskujesz dla swojego biznesu
           </h2>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 max-w-4xl">
+        <div className="mx-auto grid max-w-6xl gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
           {benefits.map(({ title, description }, index) => (
             <div key={index}>
               <h3 className="font-semibold text-foreground mb-1.5">{title}</h3>

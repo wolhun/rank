@@ -18,17 +18,17 @@ const notIncludes = [
 export function WhatWeDoSection() {
   return (
     <section className="py-20 lg:py-28">
-      <div className="container mx-auto px-6">
-        <div className="max-w-xl mb-14">
+      <div className="section-shell">
+        <div className="mx-auto mb-14 max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-wider text-accent mb-3">Nasza usługa</p>
           <h2 className="text-3xl md:text-4xl font-semibold leading-tight text-foreground">
             Co dokładnie robimy
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 max-w-4xl">
+        <div className="mx-auto grid max-w-5xl gap-8 lg:grid-cols-2">
           {/* What we do */}
-          <div className="bg-card border border-border rounded-xl p-6">
+          <div className="rounded-2xl border border-border bg-card p-7">
             <h3 className="font-semibold text-foreground mb-5">Co obejmuje usługa</h3>
             <ul className="space-y-3.5">
               {includes.map((item, index) => (
@@ -43,7 +43,7 @@ export function WhatWeDoSection() {
           </div>
 
           {/* What we don't do */}
-          <div className="bg-secondary/50 border border-border rounded-xl p-6">
+          <div className="rounded-2xl border border-border bg-secondary/55 p-7">
             <h3 className="font-semibold text-foreground mb-5">Czego to nie jest</h3>
             <ul className="space-y-3.5">
               {notIncludes.map((item, index) => (
@@ -59,10 +59,10 @@ export function WhatWeDoSection() {
         </div>
 
         {/* Result definition */}
-        <div className="mt-10 max-w-4xl">
-          <div className="border-l-2 border-accent pl-5 py-1">
+        <div className="mx-auto mt-10 max-w-5xl">
+          <div className="rounded-2xl border border-primary/25 bg-primary/[0.06] px-6 py-5">
             <p className="font-medium text-foreground mb-1">Jak rozumiemy rezultat</p>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm leading-relaxed text-muted-foreground">
               Twoja firma pojawia się w odpowiedziach AI na zapytania związane 
               z Twoją kategorią i lokalizacją. Weryfikujemy to i dokumentujemy.
             </p>

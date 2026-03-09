@@ -26,7 +26,7 @@ const consequences = [
 export function WhatYouLoseSection() {
   return (
     <section className="py-20 lg:py-28 bg-secondary/40">
-      <div className="container mx-auto px-6">
+      <div className="section-shell">
         <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
           <div className="lg:col-span-2">
             <p className="text-sm font-semibold uppercase tracking-wider text-accent mb-3">Co tracisz?</p>

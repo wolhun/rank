@@ -9,7 +9,7 @@ const trustPoints = [
 export function TrustBar() {
   return (
     <section className="py-5 border-y border-border bg-secondary/50">
-      <div className="container mx-auto px-6">
+      <div className="section-shell">
         <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12">
           {trustPoints.map(({ icon: Icon, text }) => (
             <div key={text} className="flex items-center gap-2.5">

@@ -1,18 +1,13 @@
 import type { Metadata } from 'next'
-import { DM_Sans, Source_Serif_4 } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const dmSans = DM_Sans({ 
+const inter = Inter({
   subsets: ["latin"], 
   variable: "--font-sans",
   weight: ["400", "500", "600", "700"]
-});
-const sourceSerif = Source_Serif_4({ 
-  subsets: ["latin"], 
-  variable: "--font-serif",
-  weight: ["400", "500", "600"]
-});
+})
 
 export const metadata: Metadata = {
   title: 'AI Visibility | Bądź widoczny w odpowiedziach AI',
@@ -44,7 +39,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pl">
-      <body className={`${dmSans.variable} ${sourceSerif.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} font-sans antialiased`}>
         {children}
         <Analytics />
       </body>
