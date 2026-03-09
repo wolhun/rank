@@ -5,28 +5,25 @@ import { ChevronDown } from "lucide-react"
 
 const faqs = [
   {
-    question: "Co dokładnie oznacza płatność po wyniku?",
-    answer: "Płacisz dopiero wtedy, gdy Twoja firma pojawi się w odpowiedziach AI na uzgodnione wcześniej zapytania. Weryfikujemy to i dokumentujemy przed wystawieniem faktury."
+    question: "Do you guarantee the first position?",
+    answer:
+      "AI answers can vary depending on the question and context. Our goal is to ensure your company appears among the recommended options.",
   },
   {
-    question: "Jak długo trzeba czekać na efekty?",
-    answer: "Typowo od 4 do 8 tygodni. Zależy to od kategorii, konkurencji i aktualnej widoczności Twojej marki w sieci."
+    question: "Is this SEO?",
+    answer: "No. SEO ranks web pages. This service focuses on making AI recommend your company.",
   },
   {
-    question: "Co jeśli efekty nie zostaną osiągnięte?",
-    answer: "Nie płacisz. To jest istota naszego modelu - ryzyko jest po naszej stronie."
+    question: "What if the result is not achieved?",
+    answer: "You don’t pay.",
   },
   {
-    question: "Czy to zastępuje SEO?",
-    answer: "Nie. To osobny, komplementarny kanał. AI czerpie z różnych źródeł, nie tylko z wyników Google. Dobra pozycja w Google pomaga, ale nie gwarantuje widoczności w AI."
+    question: "How long does it take?",
+    answer: "Most projects take several weeks depending on the industry and competition.",
   },
   {
-    question: "Dla jakich branż to działa?",
-    answer: "Najlepiej sprawdza się w usługach B2B, usługach lokalnych, e-commerce i firmach z wyraźną specjalizacją. Podczas wstępnej analizy oceniamy potencjał Twojej kategorii."
-  },
-  {
-    question: "Czy mogę zobaczyć przykłady?",
-    answer: "Tak, podczas rozmowy pokazujemy case studies z podobnych kategorii i przykłady zapytań, na które celujemy."
+    question: "Do you work with every business?",
+    answer: "No. We only work with companies where results are realistic.",
   },
 ]
 
@@ -34,41 +31,29 @@ export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   return (
-    <section className="py-24 lg:py-32 bg-muted/30 relative overflow-hidden">
-      {/* Organic shapes */}
-      <div className="absolute bottom-20 left-10 w-80 h-80 rounded-full bg-primary/5 blur-3xl" />
-      
-      <div className="section-shell relative">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-primary font-medium mb-4">FAQ</p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight mb-6">
-            Często zadawane pytania
-          </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            Odpowiedzi na najczęstsze pytania o naszą usługę.
-          </p>
+    <section id="faq" className="py-24 lg:py-28">
+      <div className="section-shell">
+        <div className="mx-auto mb-14 max-w-3xl text-center">
+          <h2 className="text-3xl font-semibold leading-tight text-foreground md:text-4xl">FAQ</h2>
         </div>
 
-        <div className="max-w-3xl mx-auto space-y-4">
+        <div className="mx-auto max-w-4xl space-y-4">
           {faqs.map((faq, index) => (
-            <div 
-              key={index}
-              className="bg-card border-2 border-border rounded-2xl overflow-hidden hover:border-primary/20 transition-colors"
-            >
+            <div key={faq.question} className="overflow-hidden rounded-2xl border border-border bg-card">
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full flex items-center justify-between p-6 text-left"
+                className="flex w-full items-center justify-between p-6 text-left"
               >
-                <span className="font-semibold text-foreground pr-4">{faq.question}</span>
-                <ChevronDown 
-                  className={`w-5 h-5 text-muted-foreground transition-transform flex-shrink-0 ${
+                <span className="pr-4 font-semibold text-foreground">{faq.question}</span>
+                <ChevronDown
+                  className={`h-5 w-5 shrink-0 text-muted-foreground transition-transform ${
                     openIndex === index ? "rotate-180" : ""
-                  }`} 
+                  }`}
                 />
               </button>
               {openIndex === index && (
                 <div className="px-6 pb-6">
-                  <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{faq.answer}</p>
                 </div>
               )}
             </div>
@@ -78,3 +63,4 @@ export function FAQSection() {
     </section>
   )
 }
+

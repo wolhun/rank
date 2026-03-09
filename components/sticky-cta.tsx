@@ -20,7 +20,7 @@ export function StickyCTA() {
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 p-4 md:hidden bg-background/95 backdrop-blur-md border-t border-border shadow-lg">
       <Button size="lg" className="w-full h-12 gap-2 rounded-xl">
-        Sprawdź, czy kwalifikujesz się
+        Check if your business qualifies
         <ArrowRight className="w-4 h-4" />
       </Button>
     </div>

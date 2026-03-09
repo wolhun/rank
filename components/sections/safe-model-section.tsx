@@ -1,74 +1,68 @@
-import { Check, X } from "lucide-react"
-
-const ourModel = [
-  "Płatność po uzyskaniu rezultatu",
-  "Jasne warunki przed startem",
-  "Weryfikowalne wyniki",
-  "Brak ukrytych kosztów",
-  "Jedna cena, bez abonamentu",
+const typicalModel = [
+  "Monthly payments",
+  "Long-term retainers",
+  "No guaranteed results",
+  "You pay for the work",
 ]
 
-const typicalModel = [
-  "Płatność z góry za obietnice",
-  "Niejasne metryki sukcesu",
-  "Trudno weryfikowalne efekty",
-  "Dodatkowe koszty w trakcie",
-  "Miesięczne abonamenty",
+const thisModel = [
+  "No upfront payment",
+  "No subscription",
+  "One fixed price",
+  "Payment only after results",
 ]
 
 export function SafeModelSection() {
   return (
-    <section className="py-20 lg:py-28">
+    <section className="py-20 lg:py-28 bg-secondary/35">
       <div className="section-shell">
-        <div className="mx-auto mb-14 max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-accent mb-3">Model współpracy</p>
-          <h2 className="text-3xl md:text-4xl font-semibold leading-tight text-foreground">
-            Dlaczego nie ryzykujesz
+        <div className="mx-auto mb-14 max-w-3xl text-center">
+          <h2 className="text-3xl font-semibold leading-tight text-foreground md:text-4xl">
+            Traditional SEO vs AI recommendation positioning
           </h2>
+          <p className="mt-4 text-base leading-relaxed text-muted-foreground">Two different models of visibility.</p>
         </div>
 
-        <div className="mx-auto grid max-w-5xl gap-8 lg:grid-cols-2">
-          {/* Typical model */}
-          <div className="bg-secondary/50 border border-border rounded-xl p-6">
-            <p className="text-sm font-medium text-muted-foreground mb-5">Typowy model agencyjny</p>
-            <ul className="space-y-3">
-              {typicalModel.map((item, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-muted flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <X className="w-3 h-3 text-muted-foreground" />
-                  </div>
-                  <span className="text-sm text-muted-foreground leading-relaxed">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Our model */}
-          <div className="bg-card border border-primary/20 rounded-xl p-6 ring-1 ring-primary/10">
-            <p className="text-sm font-medium text-primary mb-5">Nasz model</p>
-            <ul className="space-y-3">
-              {ourModel.map((item, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Check className="w-3 h-3 text-accent" />
-                  </div>
-                  <span className="text-sm text-foreground leading-relaxed">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        {/* Quote */}
-        <div className="mx-auto mt-12 max-w-3xl">
-          <blockquote className="border-l-2 border-border pl-5 py-1">
-            <p className="text-muted-foreground italic">
-              &ldquo;To nie jest kolejna usługa marketingowa, gdzie płacisz i czekasz. 
-              Tu płacisz tylko wtedy, gdy dostarczymy to, co obiecaliśmy.&rdquo;
+        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-2">
+          <article className="rounded-2xl border border-border bg-card p-7">
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+              Traditional SEO / GEO services
             </p>
-          </blockquote>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+              You pay every month. Agencies work on rankings. Results may take months. And payments never really stop.
+            </p>
+            <ul className="mt-5 space-y-2 text-sm text-foreground/90">
+              {typicalModel.map((item) => (
+                <li key={item} className="rounded-lg bg-secondary/50 px-3 py-2">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </article>
+
+          <article className="rounded-2xl border border-primary/25 bg-card p-7">
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">
+              AI recommendation positioning
+            </p>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+              You pay only after the result. No monthly fees. No long contracts. One fixed payment once your company
+              appears in AI answers.
+            </p>
+            <ul className="mt-5 space-y-2 text-sm text-foreground/90">
+              {thisModel.map((item) => (
+                <li key={item} className="rounded-lg bg-primary/[0.07] px-3 py-2">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </article>
         </div>
+
+        <p className="mx-auto mt-8 max-w-4xl text-center text-base font-medium text-foreground">
+          Traditional SEO charges for the process. This service charges for the result.
+        </p>
       </div>
     </section>
   )
 }
+

@@ -3,7 +3,9 @@
 import { Button } from "@/components/ui/button"
 
 const links = [
-  { href: "#how-ai-search-works", label: "How It Works" },
+  { href: "#hero", label: "Home" },
+  { href: "#how-ai-search-works", label: "Search Shift" },
+  { href: "#how-it-works", label: "Process" },
   { href: "#benefits", label: "Benefits" },
   { href: "#pricing", label: "Pricing" },
   { href: "#faq", label: "FAQ" },
@@ -30,4 +32,3 @@ export function SiteNavbar() {
     </header>
   )
 }
-
