@@ -1,11 +1,12 @@
 import { HeroSection } from "@/components/sections/hero-section"
+import { HeroSectionB } from "@/components/sections/hero-section-b"
 import { TrustBar } from "@/components/sections/trust-bar"
 import { VideoSection } from "@/components/sections/video-section"
+import { VideoSectionB } from "@/components/sections/video-section-b"
 import { StorySection } from "@/components/sections/story-section"
+import { StorySectionB } from "@/components/sections/story-section-b"
 import { OldVsNewSection } from "@/components/sections/old-vs-new-section"
 import { LiveResearchSection } from "@/components/sections/live-research-section"
-import { WhyNowSection } from "@/components/sections/why-now-section"
-import { WhatYouLoseSection } from "@/components/sections/what-you-lose-section"
 import { WhatWeDoSection } from "@/components/sections/what-we-do-section"
 import { ForWhoSection } from "@/components/sections/for-who-section"
 import { HowItWorksSection } from "@/components/sections/how-it-works-section"
@@ -13,6 +14,7 @@ import { BenefitsSection } from "@/components/sections/benefits-section"
 import { SafeModelSection } from "@/components/sections/safe-model-section"
 import { ProofSection } from "@/components/sections/proof-section"
 import { PricingSection } from "@/components/sections/pricing-section"
+import { PricingSectionB } from "@/components/sections/pricing-section-b"
 import { FAQSection } from "@/components/sections/faq-section"
 import { FinalCTASection } from "@/components/sections/final-cta-section"
 import { StickyCTA } from "@/components/sticky-cta"
@@ -29,9 +31,12 @@ export default function Home() {
       </div>
       <SiteNavbar />
       <HeroSection />
+      <HeroSectionB />
       <TrustBar />
       <VideoSection />
+      <VideoSectionB />
       <StorySection />
+      <StorySectionB />
       <LiveResearchSection />
       <OldVsNewSection />
       <WhatWeDoSection />
@@ -40,9 +45,8 @@ export default function Home() {
       <HowItWorksSection />
       <ProofSection />
       <SafeModelSection />
-      <WhyNowSection />
-      <WhatYouLoseSection />
       <PricingSection />
+      <PricingSectionB />
       <FAQSection />
       <FinalCTASection />
       <StickyCTA />

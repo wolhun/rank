@@ -52,6 +52,7 @@ export function HeroSection() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_18%,rgba(14,42,71,0.12),transparent_40%),radial-gradient(circle_at_14%_38%,rgba(200,169,107,0.14),transparent_42%)]" />
 
       <div className="section-shell relative z-10">
+        <p className="compare-label">Hero · Version A</p>
         <div className="grid items-center gap-14 lg:grid-cols-[1.02fr_1fr]">
           <div className="space-y-8">
             <div className="flex flex-wrap items-center gap-2.5">

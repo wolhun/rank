@@ -2,7 +2,8 @@
 
 import { type ReactNode, useEffect, useMemo, useState } from "react"
 
-const ITEM_HEIGHT = 124
+const COMPACT_ITEM_HEIGHT = 84
+const EXPANDED_ITEM_HEIGHT = 112
 const ITEM_GAP = 12
 
 type DemoPlatform = {
@@ -102,6 +103,32 @@ export function HeroRecommendationDemo({ platform }: DemoProps) {
     return { your: 0, a: 1, b: 2 }
   }, [promoted])
 
+  const orderedIds = useMemo(
+    () => (promoted ? (["your", "a", "b"] as const) : (["a", "b", "your"] as const)),
+    [promoted],
+  )
+
+  const itemHeights = useMemo(() => {
+    const map = { a: COMPACT_ITEM_HEIGHT, b: COMPACT_ITEM_HEIGHT, your: EXPANDED_ITEM_HEIGHT }
+    scenario.items.forEach((item) => {
+      map[item.id] = item.benefits ? EXPANDED_ITEM_HEIGHT : COMPACT_ITEM_HEIGHT
+    })
+    return map
+  }, [scenario.items])
+
+  const itemPositions = useMemo(() => {
+    let y = 0
+    const map = { a: 0, b: 0, your: 0 }
+    orderedIds.forEach((id, index) => {
+      map[id] = y
+      y += itemHeights[id]
+      if (index < orderedIds.length - 1) {
+        y += ITEM_GAP
+      }
+    })
+    return { map, total: y }
+  }, [itemHeights, orderedIds])
+
   useEffect(() => setReady(true), [])
 
   useEffect(() => {
@@ -184,20 +211,24 @@ export function HeroRecommendationDemo({ platform }: DemoProps) {
 
         <div
           className="relative"
-          style={{ height: `${ITEM_HEIGHT * scenario.items.length + ITEM_GAP * (scenario.items.length - 1)}px` }}
+          style={{ height: `${itemPositions.total}px` }}
         >
           {scenario.items.map((item, idx) => {
             const targetIndex = orderMap[item.id as keyof typeof orderMap]
-            const y = targetIndex * (ITEM_HEIGHT + ITEM_GAP)
+            const y = itemPositions.map[item.id]
             const visible = idx < visibleCount
             const isYourBusiness = item.id === "your"
             return (
               <div
                 key={item.id}
-                className={`absolute left-0 right-0 z-0 flex h-[124px] gap-3 overflow-hidden rounded-xl border p-3.5 transition-[transform,opacity,box-shadow,border-color,background-color] duration-700 ease-[cubic-bezier(.22,.61,.36,1)] ${
+                className={`absolute left-0 right-0 flex gap-3 overflow-hidden rounded-xl border p-3.5 transition-[transform,opacity,box-shadow,border-color,background-color] duration-700 ease-[cubic-bezier(.22,.61,.36,1)] ${
                   isYourBusiness ? "border-primary/35 bg-primary/[0.05]" : "border-border/80 bg-background/70"
                 } ${visible ? "opacity-100" : "opacity-0"}`}
-                style={{ transform: `translateY(${y}px)` }}
+                style={{
+                  transform: `translateY(${y}px)`,
+                  height: `${itemHeights[item.id]}px`,
+                  zIndex: isYourBusiness ? 2 : 1,
+                }}
               >
                 <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-border text-xs font-semibold text-muted-foreground">
                   {targetIndex + 1}

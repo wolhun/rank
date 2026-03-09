@@ -23,7 +23,7 @@ export function BenefitsSection() {
       <div className="section-shell">
         <div className="mx-auto mb-14 max-w-3xl text-center">
           <h2 className="text-3xl font-semibold leading-tight text-foreground md:text-4xl">
-            Why companies want to be recommended by AI
+            Why our service
           </h2>
         </div>
         <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2">
@@ -38,4 +38,3 @@ export function BenefitsSection() {
     </section>
   )
 }
-

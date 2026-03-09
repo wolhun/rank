@@ -31,6 +31,7 @@ export function StorySection() {
   return (
     <section id="how-ai-search-works" className="py-20 lg:py-28">
       <div className="section-shell">
+        <p className="compare-label">Process · Version A</p>
         <div className="mx-auto max-w-3xl text-center">
           <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-accent">How People Search Today</p>
           <h2 className="text-3xl font-semibold leading-tight text-foreground md:text-4xl">
