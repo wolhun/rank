@@ -38,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="pl">
+    <html lang="pl" data-theme="executive-light">
       <body className={`${inter.variable} font-sans antialiased`}>
         {children}
         <Analytics />

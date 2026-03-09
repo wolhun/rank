@@ -17,15 +17,14 @@ import { FAQSection } from "@/components/sections/faq-section"
 import { FinalCTASection } from "@/components/sections/final-cta-section"
 import { StickyCTA } from "@/components/sticky-cta"
 import { SiteNavbar } from "@/components/site-navbar"
+import { ThemeVariantSwitcher } from "@/components/theme-variant-switcher"
 
 export default function Home() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-background">
       <div className="pointer-events-none absolute inset-0 -z-0">
         <div className="premium-grid-overlay" />
-        <div className="absolute -top-24 left-1/2 h-[34rem] w-[34rem] -translate-x-1/2 rounded-full bg-[rgba(14,42,71,0.09)] blur-3xl" />
-        <div className="absolute top-[38rem] -left-24 h-[26rem] w-[26rem] rounded-full bg-[rgba(200,169,107,0.10)] blur-3xl" />
-        <div className="absolute top-[96rem] right-[-8rem] h-[30rem] w-[30rem] rounded-full bg-[rgba(14,42,71,0.07)] blur-3xl" />
+        <div className="absolute left-1/2 top-0 h-[20rem] w-[20rem] -translate-x-1/2 rounded-full bg-[var(--orb-a)] blur-3xl opacity-50" />
       </div>
       <SiteNavbar />
       <HeroSection />
@@ -46,6 +45,7 @@ export default function Home() {
       <FAQSection />
       <FinalCTASection />
       <StickyCTA />
+      <ThemeVariantSwitcher />
     </main>
   )
 }

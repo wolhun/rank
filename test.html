@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Recommendation Ranking</title>
+
+<style>
+
+body{
+font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial;
+margin:0;
+background:#f7f7f8;
+color:#111;
+line-height:1.6;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:80px 20px;
+}
+
+.hero{
+display:flex;
+align-items:center;
+gap:60px;
+padding:100px 20px;
+max-width:1200px;
+margin:auto;
+}
+
+.hero h1{
+font-size:48px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:18px;
+color:#555;
+}
+
+.button{
+display:inline-block;
+margin-top:25px;
+background:#2563eb;
+color:white;
+padding:14px 28px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+}
+
+.badges{
+margin-top:20px;
+font-size:14px;
+color:#666;
+}
+
+.mock{
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 5px 25px rgba(0,0,0,0.08);
+font-size:15px;
+}
+
+.section{
+background:white;
+}
+
+.section.gray{
+background:#f1f3f5;
+}
+
+.section h2{
+font-size:36px;
+margin-bottom:20px;
+}
+
+.section p{
+font-size:18px;
+color:#444;
+}
+
+.steps{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:40px;
+margin-top:40px;
+}
+
+.step{
+background:#fff;
+padding:30px;
+border-radius:10px;
+box-shadow:0 4px 20px rgba(0,0,0,0.05);
+}
+
+.compare{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+margin-top:40px;
+}
+
+.box{
+background:#fff;
+padding:30px;
+border-radius:10px;
+box-shadow:0 4px 20px rgba(0,0,0,0.05);
+}
+
+.flow{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+margin-top:30px;
+}
+
+.flow div{
+background:white;
+padding:20px;
+border-radius:8px;
+box-shadow:0 4px 15px rgba(0,0,0,0.05);
+}
+
+.price{
+text-align:center;
+font-size:38px;
+margin:20px 0;
+}
+
+footer{
+text-align:center;
+padding:80px 20px;
+background:white;
+}
+
+@media(max-width:900px){
+
+.hero{
+flex-direction:column;
+}
+
+.steps{
+grid-template-columns:1fr;
+}
+
+.compare{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<section class="hero">
+
+<div>
+
+<h1>Make AI recommend your business.</h1>
+
+<p>When people ask AI which company to choose, only a few names appear.
+Make sure yours is one of them.</p>
+
+<p><strong>Pay only after results. No upfront payment.</strong></p>
+
+<a class="button" href="#">Check if your business qualifies</a>
+
+<div class="badges">
+No upfront payment · One fixed price · Pay only after results
+</div>
+
+</div>
+
+<div class="mock">
+
+<p><strong>User:</strong><br>
+Who is the best basement waterproofing company in Toronto?</p>
+
+<p><strong>AI:</strong><br>
+The best companies include:</p>
+
+<ul>
+<li>AquaBoss Waterproofing</li>
+<li>Company B</li>
+<li>Company C</li>
+</ul>
+
+</div>
+
+</section>
+
+
+<section class="section">
+<div class="container">
+
+<h2>See how companies get recommended by AI</h2>
+
+<p>More and more customers start their search by asking AI.</p>
+
+<p>Instead of browsing websites, they ask a question.</p>
+
+<p>AI gives a direct answer and recommends a few companies.
+Those companies become the shortlist.</p>
+
+</div>
+</section>
+
+
+<section class="section gray">
+<div class="container">
+
+<h2>How people search today</h2>
+
+<p>Customers no longer search only for service names.
+They ask AI who is the best.</p>
+
+<div class="steps">
+
+<div class="step">
+<h3>The question</h3>
+<p>Instead of typing a service name into Google, users ask AI directly.</p>
+<p><em>Who is the best basement waterproofing company in Toronto?</em></p>
+</div>
+
+<div class="step">
+<h3>The AI answer</h3>
+<p>AI doesn't show pages of results.</p>
+<p>It recommends a few companies that become the shortlist.</p>
+</div>
+
+<div class="step">
+<h3>The decision</h3>
+<p>Customers start with the companies AI recommends.</p>
+<p>Everyone else is ignored.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<section class="section">
+<div class="container">
+
+<h2>Search results vs AI recommendations</h2>
+
+<div class="compare">
+
+<div class="box">
+
+<h3>Old way</h3>
+
+<p>User searches for a service.</p>
+
+<p><em>Basement waterproofing Toronto</em></p>
+
+<p>Google shows many results.</p>
+
+<p>Users open several websites, compare companies and then decide who to contact.</p>
+
+<p>You compete with dozens of businesses.</p>
+
+</div>
+
+<div class="box">
+
+<h3>New way</h3>
+
+<p>User asks AI a question.</p>
+
+<p><em>Who is the best basement waterproofing company in Toronto?</em></p>
+
+<p>AI gives a direct answer.</p>
+
+<p>It recommends a few companies.</p>
+
+<p>Those companies become the shortlist.</p>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<section class="section gray">
+<div class="container">
+
+<h2>What happens when AI recommends your company</h2>
+
+<div class="flow">
+
+<div>User asks a question</div>
+
+<div>AI recommends your company</div>
+
+<div>User trusts the answer</div>
+
+<div>User contacts your business</div>
+
+</div>
+
+<p style="margin-top:30px;">
+This is why traffic from AI often converts better.
+</p>
+
+</div>
+</section>
+
+
+<section class="section">
+<div class="container">
+
+<h2>How we make AI recommend your company</h2>
+
+<div class="steps">
+
+<div class="step">
+<h3>Industry analysis</h3>
+<p>We analyze your industry and the questions people ask AI.</p>
+</div>
+
+<div class="step">
+<h3>Positioning</h3>
+<p>We make sure AI systems understand your company and your expertise.</p>
+</div>
+
+<div class="step">
+<h3>Verification</h3>
+<p>We test prompts and confirm when your company appears in AI answers.</p>
+</div>
+
+</div>
+
+<p style="margin-top:40px;"><strong>Once the agreed result is achieved, you pay the fixed price.</strong></p>
+
+</div>
+</section>
+
+
+<section class="section gray">
+<div class="container">
+
+<h2>You see the result before you pay</h2>
+
+<p>We track AI answers for the questions that matter in your category.</p>
+
+<p>When your company starts appearing in those answers, we verify the result.</p>
+
+<p><strong>Only then do you pay.</strong></p>
+
+</div>
+</section>
+
+
+<section class="section">
+<div class="container">
+
+<h2>There is only one first place</h2>
+
+<p>AI answers usually highlight only a few companies.</p>
+
+<p>The companies mentioned first often stay there.</p>
+
+<p>It is much easier to get there early than to replace competitors later.</p>
+
+<p>Right now very few companies invest in AI visibility.</p>
+
+</div>
+</section>
+
+
+<section class="section gray">
+<div class="container">
+
+<h2>One price. Pay only after results.</h2>
+
+<div class="price">$X,XXX</div>
+
+<p>Positioning for AI recommendations in your category.</p>
+
+<p>Monitoring and verification of results.</p>
+
+<p>No monthly fees.</p>
+
+<p><strong>You pay only after the agreed result is achieved.</strong></p>
+
+<a class="button" href="#">Check if your business qualifies</a>
+
+</div>
+</section>
+
+
+<footer>
+
+<h2>If AI recommends your competitors instead of you, they win the lead.</h2>
+
+<p>Make sure your company is one of the names people see.</p>
+
+<a class="button" href="#">Check eligibility</a>
+
+</footer>
+
+
+</body>
+</html>
