@@ -11,9 +11,11 @@ type ThemeVariant = {
 const variants: ThemeVariant[] = [
   { id: "executive-light", name: "Executive", swatches: ["#f7f6f3", "#143a5a", "#c89f63"] },
   { id: "slate-light", name: "Slate", swatches: ["#f3f4f6", "#334155", "#8d9aad"] },
-  { id: "ivory-champagne", name: "Ivory", swatches: ["#f9f6ef", "#2a405f", "#c9a26e"] },
   { id: "mist-blue", name: "Mist Blue", swatches: ["#f4f8fb", "#1f4f78", "#73a3cc"] },
-  { id: "stone-light", name: "Stone", swatches: ["#f6f5f2", "#394751", "#a9a08f"] },
+  { id: "sage-tech", name: "Sage Tech", swatches: ["#f3f8f5", "#1f4f45", "#6aa58d"] },
+  { id: "rose-paper", name: "Rose Paper", swatches: ["#faf5f7", "#60364e", "#d087a8"] },
+  { id: "lilac-frost", name: "Lilac Frost", swatches: ["#f5f4fb", "#3f4472", "#8f95d8"] },
+  { id: "sand-ink", name: "Sand Ink", swatches: ["#f8f4ed", "#4c3b2f", "#b9936b"] },
 ]
 
 const storageKey = "ai-rank-theme"
@@ -59,4 +61,3 @@ export function ThemeVariantSwitcher() {
     </div>
   )
 }
-

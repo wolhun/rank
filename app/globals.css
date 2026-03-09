@@ -121,23 +121,80 @@
   --orb-b: rgba(115, 163, 204, 0.12);
 }
 
-[data-theme="stone-light"] {
-  --background: #f6f5f2;
-  --foreground: #1f252b;
-  --card: #fcfcfb;
-  --primary: #394751;
-  --secondary: #ebe9e4;
-  --muted: #e8e6e1;
-  --muted-foreground: #6a6f73;
-  --accent: #a9a08f;
-  --border: #d8d5cd;
-  --input: #f1f0eb;
-  --ring: #394751;
-  --bg-grad-start: #f6f5f2;
-  --bg-grad-end: #f0efec;
-  --grid-line: rgba(31, 37, 43, 0.03);
-  --orb-a: rgba(57, 71, 81, 0.09);
-  --orb-b: rgba(169, 160, 143, 0.1);
+[data-theme="sage-tech"] {
+  --background: #f3f8f5;
+  --foreground: #172823;
+  --card: #fcfffd;
+  --primary: #1f4f45;
+  --secondary: #e4efe8;
+  --muted: #deebe3;
+  --muted-foreground: #5f776e;
+  --accent: #6aa58d;
+  --border: #cfe1d7;
+  --input: #eaf3ed;
+  --ring: #1f4f45;
+  --bg-grad-start: #f3f8f5;
+  --bg-grad-end: #edf5f1;
+  --grid-line: rgba(23, 40, 35, 0.03);
+  --orb-a: rgba(31, 79, 69, 0.11);
+  --orb-b: rgba(106, 165, 141, 0.12);
+}
+
+[data-theme="rose-paper"] {
+  --background: #faf5f7;
+  --foreground: #2a1b24;
+  --card: #fffdfd;
+  --primary: #60364e;
+  --secondary: #f2e8ee;
+  --muted: #efe3ea;
+  --muted-foreground: #7a6071;
+  --accent: #d087a8;
+  --border: #e8d5e0;
+  --input: #f6edf2;
+  --ring: #60364e;
+  --bg-grad-start: #faf5f7;
+  --bg-grad-end: #f6edf1;
+  --grid-line: rgba(42, 27, 36, 0.03);
+  --orb-a: rgba(96, 54, 78, 0.1);
+  --orb-b: rgba(208, 135, 168, 0.12);
+}
+
+[data-theme="lilac-frost"] {
+  --background: #f5f4fb;
+  --foreground: #20223b;
+  --card: #fdfdff;
+  --primary: #3f4472;
+  --secondary: #e7e8f6;
+  --muted: #e3e4f3;
+  --muted-foreground: #636a94;
+  --accent: #8f95d8;
+  --border: #d2d7ef;
+  --input: #eceef9;
+  --ring: #3f4472;
+  --bg-grad-start: #f5f4fb;
+  --bg-grad-end: #eff0f8;
+  --grid-line: rgba(32, 34, 59, 0.03);
+  --orb-a: rgba(63, 68, 114, 0.1);
+  --orb-b: rgba(143, 149, 216, 0.12);
+}
+
+[data-theme="sand-ink"] {
+  --background: #f8f4ed;
+  --foreground: #2d241d;
+  --card: #fffdf9;
+  --primary: #4c3b2f;
+  --secondary: #efe7db;
+  --muted: #ece3d7;
+  --muted-foreground: #786a5b;
+  --accent: #b9936b;
+  --border: #e0d2c0;
+  --input: #f4eee4;
+  --ring: #4c3b2f;
+  --bg-grad-start: #f8f4ed;
+  --bg-grad-end: #f1eadf;
+  --grid-line: rgba(45, 36, 29, 0.03);
+  --orb-a: rgba(76, 59, 47, 0.1);
+  --orb-b: rgba(185, 147, 107, 0.12);
 }
 
 @theme inline {
