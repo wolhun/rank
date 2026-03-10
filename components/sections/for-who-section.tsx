@@ -1,74 +1,35 @@
-import { Check, X } from "lucide-react"
+import { Building2, Briefcase, Gavel, HeartPulse, House, Monitor } from "lucide-react"
 
-const goodFit = [
-  "Twoi klienci porównują firmy przed kontaktem",
-  "Decyzja zakupowa zaczyna się od researchu online",
-  "Działasz lokalnie lub w konkretnej kategorii",
-  "Chcesz wejść wcześnie w nowy kanał",
-  "Zależy Ci na byciu tam, gdzie AI tworzy shortlistę",
-]
-
-const notFit = [
-  "Oczekujesz gwarantowanych wyników overnight",
-  "Twoi klienci nie używają internetu do researchu",
-  "Szukasz zastępstwa dla kompleksowej strategii",
+const industries = [
+  { icon: Gavel, label: "Legal" },
+  { icon: House, label: "Home services" },
+  { icon: HeartPulse, label: "Healthcare" },
+  { icon: Monitor, label: "SaaS" },
+  { icon: Briefcase, label: "Consulting" },
+  { icon: Building2, label: "B2B services" },
 ]
 
 export function ForWhoSection() {
   return (
     <section className="section-raised section-divider py-20 lg:py-28">
       <div className="section-shell">
-        <div className="mx-auto mb-14 max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-accent mb-3">Dopasowanie</p>
-          <h2 className="text-3xl md:text-4xl font-semibold leading-tight text-foreground">
-            Dla kogo jest ta usługa
-          </h2>
+        <div className="mx-auto max-w-4xl text-center">
+          <h2 className="text-3xl font-semibold leading-tight text-foreground md:text-4xl">Who this service is for</h2>
+          <p className="copy-lead mx-auto mt-4">
+            This service works best for businesses where people actively search for recommendations before buying.
+          </p>
         </div>
 
-        <div className="mx-auto grid max-w-5xl gap-8 lg:grid-cols-2">
-          {/* Good fit */}
-          <div className="card-default rounded-2xl p-7">
-            <h3 className="font-semibold text-foreground mb-5">Ta usługa ma sens, jeśli...</h3>
-            <ul className="space-y-3">
-              {goodFit.map((item, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Check className="w-3 h-3 text-accent" />
-                  </div>
-                  <span className="text-sm text-foreground leading-relaxed">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Not fit */}
-          <div className="card-muted rounded-2xl p-7">
-            <h3 className="font-semibold text-foreground mb-5">Może nie być dobrym fit, jeśli...</h3>
-            <ul className="space-y-3">
-              {notFit.map((item, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-muted flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <X className="w-3 h-3 text-muted-foreground" />
-                  </div>
-                  <span className="text-sm text-muted-foreground leading-relaxed">{item}</span>
-                </li>
-              ))}
-            </ul>
-            
-            <div className="mt-6 pt-5 border-t border-border">
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Szczerość w kwestii dopasowania buduje zaufanie. Wolimy pracować 
-                z firmami, dla których ta usługa ma realny sens.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="mt-8 text-center">
-          <a href="#pricing" className="micro-cta">
-            Check if your category qualifies
-          </a>
+        <div className="mx-auto mt-10 grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {industries.map((item) => (
+            <article key={item.label} className="card-default rounded-2xl p-5">
+              <item.icon className="h-5 w-5 text-primary" />
+              <p className="mt-2 text-sm font-semibold text-foreground">{item.label}</p>
+            </article>
+          ))}
         </div>
       </div>
     </section>
   )
 }
+

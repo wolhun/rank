@@ -7,23 +7,21 @@ const faqs = [
   {
     question: "Do you guarantee the first position?",
     answer:
-      "AI answers can vary depending on the question and context. Our goal is to ensure your company appears among the recommended options.",
+      "AI answers can vary depending on context. Our goal is to ensure your company appears among the recommended options for the agreed prompt.",
   },
   {
     question: "Is this SEO?",
-    answer: "No. SEO ranks web pages. This service focuses on making AI recommend your company.",
+    answer:
+      "No. SEO focuses on ranking websites in search engines. This service focuses on getting your company recommended directly in AI answers.",
+  },
+  {
+    question: "How do you verify results?",
+    answer:
+      "We test the agreed prompt in incognito and logged-out environments to minimize the impact of personalization.",
   },
   {
     question: "What if the result is not achieved?",
     answer: "You don’t pay.",
-  },
-  {
-    question: "How long does it take?",
-    answer: "Most projects take several weeks depending on the industry and competition.",
-  },
-  {
-    question: "Do you work with every business?",
-    answer: "No. We only work with companies where results are realistic.",
   },
 ]
 
@@ -34,7 +32,7 @@ export function FAQSection() {
     <section id="faq" className="section-neutral section-divider py-24 lg:py-28">
       <div className="section-shell">
         <div className="mx-auto mb-14 max-w-3xl text-center">
-          <h2 className="text-3xl font-semibold leading-tight text-foreground md:text-4xl">FAQ</h2>
+          <h2 className="text-3xl font-semibold leading-tight text-foreground md:text-4xl">Frequently asked questions</h2>
         </div>
 
         <div className="mx-auto max-w-4xl space-y-4">
@@ -63,3 +61,4 @@ export function FAQSection() {
     </section>
   )
 }
+

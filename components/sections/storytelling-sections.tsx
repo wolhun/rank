@@ -38,58 +38,6 @@ const sections = [
       "And that recommendation determines who gets the lead.",
     ],
   },
-  {
-    id: "story-quality",
-    headline: "AI traffic behaves differently.",
-    text: [
-      "When a customer finds you through search results, they are still comparing options.",
-      "When AI recommends your company, the situation is different.",
-      "The user already trusts the answer.",
-      "It feels closer to a recommendation than a search result.",
-      "That is why traffic from AI often converts better.",
-    ],
-  },
-  {
-    id: "story-solution",
-    headline: "This service helps your company appear in AI recommendations.",
-    text: [
-      "Our goal is simple.",
-      "When users ask AI which company to choose, your business appears in the answer.",
-      "Instead of relying only on search rankings, your company becomes part of the recommendation.",
-    ],
-  },
-  {
-    id: "story-risk",
-    headline: "You only pay after results.",
-    text: [
-      "Most marketing services charge upfront.",
-      "You pay monthly and hope the results eventually come.",
-      "This service works differently.",
-      "You pay only after the agreed result is achieved.",
-      "If we don’t deliver the result, you don’t pay.",
-    ],
-  },
-  {
-    id: "story-scarcity",
-    headline: "There is only one first place.",
-    text: [
-      "AI answers usually mention only a few companies.",
-      "The companies that appear first often stay there.",
-      "It is much easier to get there early than to replace competitors later.",
-      "Right now very few companies invest in AI visibility.",
-      "That makes this moment an opportunity.",
-    ],
-  },
-  {
-    id: "story-conclusion",
-    headline: "If AI recommends your competitors instead of you, they win the lead.",
-    text: [
-      "AI answers shape the shortlist.",
-      "The shortlist shapes who gets the customer.",
-      "Make sure your company is one of the names people see.",
-    ],
-    cta: "Check if your business qualifies.",
-  },
 ] as const
 
 function VisualCardOne() {

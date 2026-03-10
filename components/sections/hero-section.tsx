@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { ArrowRight, Check } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { HeroRecommendationDemo } from "@/components/hero-recommendation-demo"
 import { Button } from "@/components/ui/button"
 
@@ -82,20 +82,9 @@ export function HeroSection() {
               <p className="copy-lead">
                 When people ask AI which company to choose, your business appears in the answer.
               </p>
-              <div className="space-y-2 pt-1">
-                <p className="flex items-center gap-2 text-base font-medium text-foreground">
-                  <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary/[0.10] text-primary">
-                    <Check className="h-3.5 w-3.5" />
-                  </span>
-                  Pay only after results.
-                </p>
-                <p className="flex items-center gap-2 text-base font-medium text-foreground">
-                  <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary/[0.10] text-primary">
-                    <Check className="h-3.5 w-3.5" />
-                  </span>
-                  No upfront payment.
-                </p>
-              </div>
+              <p className="text-sm font-medium text-muted-foreground">
+                No upfront payment · One fixed price · Pay only after results
+              </p>
             </div>
 
             <div className="flex flex-wrap gap-3">
