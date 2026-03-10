@@ -109,7 +109,9 @@ function VisualCardOne() {
       </div>
       <div className="mt-3 rounded-lg border border-border bg-background/85 p-3">
         <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">Behavior shift</p>
-        <p className="mt-1 text-sm text-foreground">Search phrase -> Question prompt -> AI recommendation</p>
+        <p className="mt-1 text-sm text-foreground">
+          Search phrase {"\u2192"} Question prompt {"\u2192"} AI recommendation
+        </p>
       </div>
     </div>
   )
@@ -234,4 +236,3 @@ export function StorytellingSections() {
     </section>
   )
 }
-
