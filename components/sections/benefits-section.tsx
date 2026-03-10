@@ -19,7 +19,7 @@ const benefits = [
 
 export function BenefitsSection() {
   return (
-    <section id="benefits" className="py-20 lg:py-28 bg-secondary/35">
+    <section id="benefits" className="section-raised section-divider py-20 lg:py-28">
       <div className="section-shell">
         <div className="mx-auto mb-14 max-w-3xl text-center">
           <h2 className="text-3xl font-semibold leading-tight text-foreground md:text-4xl">
@@ -28,11 +28,16 @@ export function BenefitsSection() {
         </div>
         <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2">
           {benefits.map((item) => (
-            <article key={item.title} className="rounded-2xl border border-border bg-card p-7">
+            <article key={item.title} className="card-default rounded-2xl p-7">
               <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.text}</p>
+              <p className="copy-body mt-3">{item.text}</p>
             </article>
           ))}
+        </div>
+        <div className="mt-8 text-center">
+          <a href="#pricing" className="micro-cta">
+            See if your category qualifies
+          </a>
         </div>
       </div>
     </section>

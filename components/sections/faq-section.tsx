@@ -31,7 +31,7 @@ export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   return (
-    <section id="faq" className="py-24 lg:py-28">
+    <section id="faq" className="section-neutral section-divider py-24 lg:py-28">
       <div className="section-shell">
         <div className="mx-auto mb-14 max-w-3xl text-center">
           <h2 className="text-3xl font-semibold leading-tight text-foreground md:text-4xl">FAQ</h2>
@@ -39,7 +39,7 @@ export function FAQSection() {
 
         <div className="mx-auto max-w-4xl space-y-4">
           {faqs.map((faq, index) => (
-            <div key={faq.question} className="overflow-hidden rounded-2xl border border-border bg-card">
+            <div key={faq.question} className="card-default overflow-hidden rounded-2xl">
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
                 className="flex w-full items-center justify-between p-6 text-left"
@@ -63,4 +63,3 @@ export function FAQSection() {
     </section>
   )
 }
-

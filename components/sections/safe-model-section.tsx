@@ -14,7 +14,7 @@ const thisModel = [
 
 export function SafeModelSection() {
   return (
-    <section className="py-20 lg:py-28 bg-secondary/35">
+    <section className="section-raised section-divider py-20 lg:py-28">
       <div className="section-shell">
         <div className="mx-auto mb-14 max-w-3xl text-center">
           <h2 className="text-3xl font-semibold leading-tight text-foreground md:text-4xl">
@@ -24,11 +24,11 @@ export function SafeModelSection() {
         </div>
 
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-2">
-          <article className="rounded-2xl border border-border bg-card p-7">
+          <article className="card-muted rounded-2xl p-7">
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
               Traditional SEO / GEO services
             </p>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+            <p className="copy-body mt-3">
               You pay every month. Agencies work on rankings. Results may take months. And payments never really stop.
             </p>
             <ul className="mt-5 space-y-2 text-sm text-foreground/90">
@@ -40,11 +40,11 @@ export function SafeModelSection() {
             </ul>
           </article>
 
-          <article className="rounded-2xl border border-primary/25 bg-card p-7">
+          <article className="card-primary rounded-2xl p-7">
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">
               AI recommendation positioning
             </p>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+            <p className="copy-body mt-3">
               You pay only after the result. No monthly fees. No long contracts. One fixed payment once your company
               appears in AI answers.
             </p>
@@ -61,8 +61,12 @@ export function SafeModelSection() {
         <p className="mx-auto mt-8 max-w-4xl text-center text-base font-medium text-foreground">
           Traditional SEO charges for the process. This service charges for the result.
         </p>
+        <div className="mt-4 text-center">
+          <a href="#pricing" className="micro-cta">
+            Compare delivery model
+          </a>
+        </div>
       </div>
     </section>
   )
 }
-

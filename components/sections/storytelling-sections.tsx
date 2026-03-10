@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { ArrowRight, CircleDot, MessageSquareQuote, Sparkles } from "lucide-react"
+import { ArrowRight, CircleDot, ListChecks, MessageSquareQuote, Sparkles } from "lucide-react"
 
 const sections = [
   {
@@ -92,10 +92,73 @@ const sections = [
   },
 ] as const
 
-function VisualCard({ index }: { index: number }) {
+function VisualCardOne() {
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-border bg-card p-5 shadow-[0_22px_70px_-56px_rgba(12,19,33,0.65)]">
-      <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(20,58,90,0.08),rgba(200,159,99,0.08))]" />
+    <div className="card-default relative overflow-hidden rounded-2xl p-4 md:p-5">
+      <div className="overflow-hidden rounded-xl border border-border bg-background/90">
+        <div className="aspect-[16/10] w-full bg-[linear-gradient(135deg,color-mix(in_oklab,var(--primary)_12%,white),color-mix(in_oklab,var(--accent)_18%,white))] p-3">
+          <div className="flex h-full items-end justify-between">
+            <p className="rounded-md border border-border/80 bg-background/88 px-2.5 py-1 text-[11px] font-mono uppercase tracking-[0.12em] text-muted-foreground">
+              IMG SLOT
+            </p>
+            <p className="rounded-md bg-primary px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-primary-foreground">
+              Story Start
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="mt-3 rounded-lg border border-border bg-background/85 p-3">
+        <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">Behavior shift</p>
+        <p className="mt-1 text-sm text-foreground">Search phrase -> Question prompt -> AI recommendation</p>
+      </div>
+    </div>
+  )
+}
+
+function VisualCardTwo() {
+  return (
+    <div className="card-primary rounded-2xl p-4 md:p-5">
+      <div className="space-y-3">
+        <div className="rounded-lg border border-border bg-background/90 p-3">
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">Step 1</p>
+          <p className="mt-1 text-sm text-foreground">User asks AI directly</p>
+        </div>
+        <div className="flex justify-center">
+          <ArrowRight className="h-4 w-4 text-primary" />
+        </div>
+        <div className="rounded-lg border border-primary/25 bg-primary/[0.08] p-3">
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-primary">Step 2</p>
+          <p className="mt-1 text-sm text-foreground">AI returns shortlist</p>
+        </div>
+        <div className="flex justify-center">
+          <ArrowRight className="h-4 w-4 text-primary" />
+        </div>
+        <div className="rounded-lg border border-border bg-background/90 p-3">
+          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">Step 3</p>
+          <p className="mt-1 text-sm text-foreground">Shortlist decides attention</p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function VisualCardThree() {
+  return (
+    <div className="card-muted rounded-2xl p-4 md:p-5">
+      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">Lead impact</p>
+      <div className="mt-3 space-y-2">
+        <div className="rounded-lg border border-border bg-background/85 p-3 text-sm text-foreground">Trust starts high</div>
+        <div className="rounded-lg border border-border bg-background/85 p-3 text-sm text-foreground">Faster qualification</div>
+        <div className="rounded-lg border border-border bg-background/85 p-3 text-sm text-foreground">Higher-intent conversations</div>
+      </div>
+    </div>
+  )
+}
+
+function DefaultVisual({ index }: { index: number }) {
+  return (
+    <div className="card-default relative overflow-hidden rounded-2xl p-5">
+      <div className="absolute inset-0 bg-[linear-gradient(135deg,color-mix(in_oklab,var(--primary)_8%,white),color-mix(in_oklab,var(--accent)_10%,white))]" />
       <div className="relative space-y-3">
         <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background/80 px-3 py-1.5 text-xs font-mono tracking-[0.12em] text-muted-foreground">
           <CircleDot className="h-3.5 w-3.5 text-primary" />
@@ -123,34 +186,47 @@ function VisualCard({ index }: { index: number }) {
   )
 }
 
+function StoryVisual({ index }: { index: number }) {
+  if (index === 0) return <VisualCardOne />
+  if (index === 1) return <VisualCardTwo />
+  if (index === 2) return <VisualCardThree />
+  return <DefaultVisual index={index} />
+}
+
 export function StorytellingSections() {
   return (
-    <section className="py-18 lg:py-24">
+    <section className="section-raised py-18 lg:py-24">
       <div className="section-shell space-y-8">
         {sections.map((item, index) => (
-          <article key={item.id} className="rounded-3xl border border-border bg-card/88 p-6 md:p-8">
+          <article key={item.id} className="card-default section-divider rounded-3xl p-6 md:p-8">
             <div className="grid items-start gap-6 lg:grid-cols-[1.15fr_0.85fr]">
               <div>
                 <p className="mb-3 font-mono text-xs uppercase tracking-[0.13em] text-muted-foreground">Story section {index + 1}</p>
-                <h2 className="text-balance text-2xl font-semibold leading-tight text-foreground md:text-3xl whitespace-pre-line">
+                <h2 className="text-balance text-2xl font-semibold leading-tight text-foreground whitespace-pre-line md:text-3xl">
                   {item.headline}
                 </h2>
                 <div className="mt-4 space-y-2">
                   {item.text.map((line) => (
-                    <p key={line} className="text-sm leading-relaxed text-muted-foreground">
+                    <p key={line} className="copy-body">
                       {line}
                     </p>
                   ))}
                 </div>
                 {item.keyLine ? <p className="mt-4 text-base font-semibold text-foreground">{item.keyLine}</p> : null}
                 {item.cta ? (
-                  <Button className="mt-6 h-11 gap-2 px-6 text-sm">
+                  <Button className="ui-motion mt-6 h-11 gap-2 px-6 text-sm">
                     {item.cta}
                     <ArrowRight className="h-4 w-4" />
                   </Button>
                 ) : null}
+                {!item.cta ? (
+                  <a href="#pricing" className="micro-cta mt-5">
+                    See verification standard
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </a>
+                ) : null}
               </div>
-              <VisualCard index={index} />
+              <StoryVisual index={index} />
             </div>
           </article>
         ))}

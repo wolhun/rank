@@ -13,9 +13,6 @@ const variants: ThemeVariant[] = [
   { id: "slate-light", name: "Slate", swatches: ["#f3f4f6", "#334155", "#8d9aad"] },
   { id: "mist-blue", name: "Mist Blue", swatches: ["#f4f8fb", "#1f4f78", "#73a3cc"] },
   { id: "sage-tech", name: "Sage Tech", swatches: ["#f3f8f5", "#1f4f45", "#6aa58d"] },
-  { id: "rose-paper", name: "Rose Paper", swatches: ["#faf5f7", "#60364e", "#d087a8"] },
-  { id: "lilac-frost", name: "Lilac Frost", swatches: ["#f5f4fb", "#3f4472", "#8f95d8"] },
-  { id: "sand-ink", name: "Sand Ink", swatches: ["#f8f4ed", "#4c3b2f", "#b9936b"] },
 ]
 
 const storageKey = "ai-rank-theme"

@@ -1,6 +1,6 @@
 export function OldVsNewSection() {
   return (
-    <section className="py-20 lg:py-24">
+    <section className="section-raised section-divider py-20 lg:py-24">
       <div className="section-shell">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-semibold leading-tight text-foreground md:text-4xl">
@@ -9,7 +9,7 @@ export function OldVsNewSection() {
         </div>
 
         <div className="mx-auto mt-10 grid max-w-6xl gap-6 lg:grid-cols-2">
-          <article className="rounded-2xl border border-border bg-secondary/45 p-7">
+          <article className="card-muted rounded-2xl p-7">
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">Old way</p>
             <h3 className="mt-3 text-xl font-semibold text-foreground">User types a service name into Google</h3>
             <p className="mt-2 text-sm text-muted-foreground">Example: Basement waterproofing Toronto</p>
@@ -19,7 +19,7 @@ export function OldVsNewSection() {
             </p>
           </article>
 
-          <article className="rounded-2xl border border-primary/25 bg-card p-7">
+          <article className="card-primary rounded-2xl p-7">
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">New way</p>
             <h3 className="mt-3 text-xl font-semibold text-foreground">User asks AI a question</h3>
             <p className="mt-2 text-sm text-muted-foreground">
@@ -34,8 +34,12 @@ export function OldVsNewSection() {
         <p className="mx-auto mt-8 max-w-4xl text-center text-base font-medium text-foreground">
           Being recommended by AI means you start the conversation already shortlisted.
         </p>
+        <div className="mt-4 text-center">
+          <a href="#pricing" className="micro-cta">
+            Check estimated timeline
+          </a>
+        </div>
       </div>
     </section>
   )
 }
-

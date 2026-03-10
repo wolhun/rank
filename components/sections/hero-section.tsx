@@ -48,7 +48,7 @@ export function HeroSection() {
   const platform = platforms[activePlatform]
 
   return (
-    <section id="hero" className="relative overflow-hidden py-24 lg:py-28">
+    <section id="hero" className="section-neutral section-divider relative overflow-hidden py-24 lg:py-28">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_18%,rgba(14,42,71,0.12),transparent_40%),radial-gradient(circle_at_14%_38%,rgba(200,169,107,0.14),transparent_42%)]" />
 
       <div className="section-shell relative z-10">
@@ -79,7 +79,7 @@ export function HeroSection() {
               <h1 className="text-balance text-4xl font-semibold leading-[1.06] tracking-tight text-foreground md:text-5xl lg:text-[3.45rem]">
                 Make AI recommend your business. Pay after results.
               </h1>
-              <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">
+              <p className="copy-lead">
                 When people ask AI which company to choose, your business appears in the answer.
               </p>
               <div className="space-y-2 pt-1">
@@ -99,7 +99,7 @@ export function HeroSection() {
             </div>
 
             <div className="flex flex-wrap gap-3">
-              <Button size="lg" className="h-12 gap-2 px-7 text-base font-medium">
+              <Button size="lg" className="ui-motion h-12 gap-2 px-7 text-base font-medium">
                 Check if your business qualifies
                 <ArrowRight className="h-4 w-4" />
               </Button>

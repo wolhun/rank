@@ -43,6 +43,9 @@
   --orb-a: rgba(20, 58, 90, 0.08);
   --orb-b: rgba(200, 159, 99, 0.08);
   --card-shadow: 0 24px 76px -56px rgba(12, 19, 33, 0.58);
+  --motion-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --motion-fast: 220ms;
+  --motion-std: 300ms;
 }
 
 [data-theme="executive-light"] {
@@ -83,25 +86,6 @@
   --orb-b: rgba(148, 163, 184, 0.11);
 }
 
-[data-theme="ivory-champagne"] {
-  --background: #f9f6ef;
-  --foreground: #1e2530;
-  --card: #fffdfa;
-  --primary: #2a405f;
-  --secondary: #f2ece2;
-  --muted: #efe9df;
-  --muted-foreground: #6f6a63;
-  --accent: #c9a26e;
-  --border: #e4d8c9;
-  --input: #f6f1e8;
-  --ring: #2a405f;
-  --bg-grad-start: #f9f6ef;
-  --bg-grad-end: #f4eee4;
-  --grid-line: rgba(37, 45, 56, 0.03);
-  --orb-a: rgba(42, 64, 95, 0.09);
-  --orb-b: rgba(201, 162, 110, 0.11);
-}
-
 [data-theme="mist-blue"] {
   --background: #f4f8fb;
   --foreground: #172433;
@@ -138,63 +122,6 @@
   --grid-line: rgba(23, 40, 35, 0.03);
   --orb-a: rgba(31, 79, 69, 0.11);
   --orb-b: rgba(106, 165, 141, 0.12);
-}
-
-[data-theme="rose-paper"] {
-  --background: #faf5f7;
-  --foreground: #2a1b24;
-  --card: #fffdfd;
-  --primary: #60364e;
-  --secondary: #f2e8ee;
-  --muted: #efe3ea;
-  --muted-foreground: #7a6071;
-  --accent: #d087a8;
-  --border: #e8d5e0;
-  --input: #f6edf2;
-  --ring: #60364e;
-  --bg-grad-start: #faf5f7;
-  --bg-grad-end: #f6edf1;
-  --grid-line: rgba(42, 27, 36, 0.03);
-  --orb-a: rgba(96, 54, 78, 0.1);
-  --orb-b: rgba(208, 135, 168, 0.12);
-}
-
-[data-theme="lilac-frost"] {
-  --background: #f5f4fb;
-  --foreground: #20223b;
-  --card: #fdfdff;
-  --primary: #3f4472;
-  --secondary: #e7e8f6;
-  --muted: #e3e4f3;
-  --muted-foreground: #636a94;
-  --accent: #8f95d8;
-  --border: #d2d7ef;
-  --input: #eceef9;
-  --ring: #3f4472;
-  --bg-grad-start: #f5f4fb;
-  --bg-grad-end: #eff0f8;
-  --grid-line: rgba(32, 34, 59, 0.03);
-  --orb-a: rgba(63, 68, 114, 0.1);
-  --orb-b: rgba(143, 149, 216, 0.12);
-}
-
-[data-theme="sand-ink"] {
-  --background: #f8f4ed;
-  --foreground: #2d241d;
-  --card: #fffdf9;
-  --primary: #4c3b2f;
-  --secondary: #efe7db;
-  --muted: #ece3d7;
-  --muted-foreground: #786a5b;
-  --accent: #b9936b;
-  --border: #e0d2c0;
-  --input: #f4eee4;
-  --ring: #4c3b2f;
-  --bg-grad-start: #f8f4ed;
-  --bg-grad-end: #f1eadf;
-  --grid-line: rgba(45, 36, 29, 0.03);
-  --orb-a: rgba(76, 59, 47, 0.1);
-  --orb-b: rgba(185, 147, 107, 0.12);
 }
 
 @theme inline {
@@ -268,6 +195,95 @@
       radial-gradient(circle at 82% 14%, var(--orb-b), transparent 32%);
     opacity: 0.8;
     pointer-events: none;
+  }
+
+  .section-neutral {
+    position: relative;
+  }
+
+  .section-raised {
+    position: relative;
+    background: color-mix(in oklab, var(--card) 72%, var(--secondary));
+    border-block: 1px solid color-mix(in oklab, var(--border) 78%, white);
+  }
+
+  .section-raised::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -1px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, color-mix(in oklab, var(--border) 85%, white), transparent);
+  }
+
+  .section-divider {
+    position: relative;
+  }
+
+  .section-divider::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: min(86vw, 980px);
+    height: 1px;
+    background: linear-gradient(to right, transparent, color-mix(in oklab, var(--border) 90%, white), transparent);
+  }
+
+  .card-default {
+    border: 1px solid var(--border);
+    background: color-mix(in oklab, var(--card) 92%, white);
+    box-shadow: var(--card-shadow);
+  }
+
+  .card-muted {
+    border: 1px solid color-mix(in oklab, var(--border) 86%, white);
+    background: color-mix(in oklab, var(--secondary) 68%, var(--card));
+  }
+
+  .card-primary {
+    border: 1px solid color-mix(in oklab, var(--primary) 28%, var(--border));
+    background: linear-gradient(
+      160deg,
+      color-mix(in oklab, var(--card) 93%, white) 0%,
+      color-mix(in oklab, var(--primary) 8%, var(--card)) 100%
+    );
+    box-shadow: 0 28px 90px -62px color-mix(in oklab, var(--primary) 40%, rgba(12, 19, 33, 0.46));
+  }
+
+  .copy-lead {
+    max-width: 62ch;
+    font-size: 1.08rem;
+    line-height: 1.65;
+    color: var(--muted-foreground);
+  }
+
+  .copy-body {
+    max-width: 72ch;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--muted-foreground);
+  }
+
+  .micro-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.86rem;
+    font-weight: 600;
+    color: var(--primary);
+    transition: color var(--motion-std) var(--motion-ease), transform var(--motion-std) var(--motion-ease);
+  }
+
+  .micro-cta:hover {
+    transform: translateX(2px);
+    color: color-mix(in oklab, var(--primary) 85%, black);
+  }
+
+  .ui-motion {
+    transition: all var(--motion-std) var(--motion-ease);
   }
 
   .compare-label {

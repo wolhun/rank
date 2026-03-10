@@ -29,7 +29,7 @@ const steps = [
 
 export function StorySection() {
   return (
-    <section id="how-ai-search-works" className="py-20 lg:py-28">
+    <section id="how-ai-search-works" className="section-neutral section-divider py-20 lg:py-28">
       <div className="section-shell">
         <p className="compare-label">Process · Version A</p>
         <div className="mx-auto max-w-3xl text-center">
@@ -42,13 +42,13 @@ export function StorySection() {
           </p>
         </div>
 
-        <div className="mx-auto mt-10 max-w-6xl rounded-3xl border border-border/80 bg-card/90 p-5 shadow-[0_24px_80px_-60px_rgba(7,14,26,0.6)] md:p-8">
+        <div className="card-default mx-auto mt-10 max-w-6xl rounded-3xl p-5 md:p-8">
           <div className="relative grid gap-6 lg:grid-cols-3">
             <div className="absolute left-7 top-0 h-full w-px bg-gradient-to-b from-primary/0 via-primary/35 to-primary/0 lg:hidden" />
             <div className="absolute left-0 right-0 top-[3.35rem] hidden h-px bg-gradient-to-r from-primary/0 via-primary/35 to-primary/0 lg:block" />
 
             {steps.map((step, index) => (
-              <article key={step.number} className="relative rounded-2xl border border-border bg-background/80 p-6">
+              <article key={step.number} className="card-muted relative rounded-2xl p-6">
                 <div className="flex items-center gap-3">
                   <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-primary/35 bg-primary/[0.08] text-sm font-semibold text-primary">
                     {step.number}

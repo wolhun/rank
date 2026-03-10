@@ -27,11 +27,11 @@ const flow = [
 
 export function PricingSection() {
   return (
-    <section id="pricing" className="py-24 lg:py-28">
+    <section id="pricing" className="section-neutral section-divider py-24 lg:py-28">
       <div className="section-shell">
         <p className="compare-label">Pricing · Version A</p>
         <div className="mx-auto grid max-w-6xl gap-7 lg:grid-cols-[1fr_1.15fr]">
-          <div className="relative overflow-hidden rounded-3xl border border-primary/20 bg-card p-8 shadow-[0_28px_90px_-58px_rgba(6,13,23,0.62)] md:p-10">
+          <div className="card-primary relative overflow-hidden rounded-3xl p-8 md:p-10">
             <div className="pointer-events-none absolute -top-24 right-[-4.8rem] h-56 w-56 rounded-full bg-primary/[0.12] blur-3xl" />
             <div className="pointer-events-none absolute -bottom-16 left-[-4rem] h-44 w-44 rounded-full bg-[rgba(200,169,107,0.14)] blur-3xl" />
 
@@ -44,7 +44,7 @@ export function PricingSection() {
               One price. Pay only after results.
             </h2>
 
-            <div className="mt-6 rounded-2xl border border-border bg-background/75 px-6 py-5">
+            <div className="card-default mt-6 rounded-2xl px-6 py-5">
               <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">Fixed price</p>
               <p className="mt-1 text-5xl font-semibold tracking-tight text-foreground md:text-6xl">$X,XXX</p>
             </div>
@@ -60,12 +60,12 @@ export function PricingSection() {
               ))}
             </ul>
 
-            <Button size="lg" className="mt-8 h-12 px-7 text-base">
+            <Button size="lg" className="ui-motion mt-8 h-12 px-7 text-base">
               Check if your business qualifies
             </Button>
           </div>
 
-          <div className="rounded-3xl border border-border bg-card p-8 md:p-10">
+          <div className="card-default rounded-3xl p-8 md:p-10">
             <p className="text-sm font-semibold uppercase tracking-[0.12em] text-muted-foreground">When you pay</p>
             <p className="mt-3 text-base leading-relaxed text-foreground">
               You only pay after the agreed result is achieved.
@@ -73,7 +73,7 @@ export function PricingSection() {
 
             <div className="mt-7 space-y-4">
               {flow.map((step, index) => (
-                <div key={step.title} className="relative rounded-2xl border border-border bg-secondary/30 p-5">
+                <div key={step.title} className="card-muted relative rounded-2xl p-5">
                   {index < flow.length - 1 ? (
                     <span className="absolute bottom-[-0.9rem] left-10 h-4 w-px bg-border" />
                   ) : null}
@@ -90,7 +90,7 @@ export function PricingSection() {
               ))}
             </div>
 
-            <div className="mt-7 flex items-center gap-3 rounded-2xl border border-border bg-background/65 p-4">
+            <div className="card-default mt-7 flex items-center gap-3 rounded-2xl p-4">
               <Clock3 className="h-5 w-5 text-primary" />
               <p className="text-sm text-muted-foreground">Most categories are delivered in several weeks.</p>
             </div>

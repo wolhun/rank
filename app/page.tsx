@@ -11,6 +11,7 @@ import { HowItWorksSection } from "@/components/sections/how-it-works-section"
 import { BenefitsSection } from "@/components/sections/benefits-section"
 import { SafeModelSection } from "@/components/sections/safe-model-section"
 import { ProofSection } from "@/components/sections/proof-section"
+import { VerificationStrip } from "@/components/sections/verification-strip"
 import { PricingSection } from "@/components/sections/pricing-section"
 import { PricingSectionB } from "@/components/sections/pricing-section-b"
 import { FAQSection } from "@/components/sections/faq-section"
@@ -39,6 +40,7 @@ export default function Home() {
       <BenefitsSection />
       <HowItWorksSection />
       <ProofSection />
+      <VerificationStrip />
       <SafeModelSection />
       <PricingSection />
       <PricingSectionB />
