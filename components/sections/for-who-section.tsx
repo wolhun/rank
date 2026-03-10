@@ -11,7 +11,7 @@ const industries = [
 
 export function ForWhoSection() {
   return (
-    <section className="section-raised section-divider py-20 lg:py-28">
+    <section className="section-band-soft section-divider py-20 lg:py-28">
       <div className="section-shell">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-semibold leading-tight text-foreground md:text-4xl">Who this service is for</h2>
@@ -22,7 +22,7 @@ export function ForWhoSection() {
 
         <div className="mx-auto mt-10 grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {industries.map((item) => (
-            <article key={item.label} className="card-default rounded-2xl p-5">
+            <article key={item.label} className="panel-info rounded-2xl p-5">
               <item.icon className="h-5 w-5 text-primary" />
               <p className="mt-2 text-sm font-semibold text-foreground">{item.label}</p>
             </article>
@@ -32,4 +32,3 @@ export function ForWhoSection() {
     </section>
   )
 }
-

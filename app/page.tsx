@@ -25,10 +25,6 @@ import { ThemeVariantSwitcher } from "@/components/theme-variant-switcher"
 export default function Home() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-background">
-      <div className="pointer-events-none absolute inset-0 -z-0">
-        <div className="premium-grid-overlay" />
-        <div className="absolute left-1/2 top-0 h-[20rem] w-[20rem] -translate-x-1/2 rounded-full bg-[var(--orb-a)] blur-3xl opacity-50" />
-      </div>
       <SiteNavbar />
       <HeroSection />
       <TrustBar />

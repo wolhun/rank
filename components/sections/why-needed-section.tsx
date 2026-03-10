@@ -1,6 +1,6 @@
 export function WhyNeededSection() {
   return (
-    <section className="section-neutral section-divider py-20 lg:py-24">
+    <section className="section-band-contrast section-divider py-20 lg:py-24">
       <div className="section-shell">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-semibold leading-tight text-foreground md:text-4xl">
@@ -11,14 +11,13 @@ export function WhyNeededSection() {
           </p>
         </div>
         <div className="mx-auto mt-10 grid max-w-5xl gap-4 md:grid-cols-[1fr_auto_1fr_auto_1fr] md:items-center">
-          <div className="card-default rounded-2xl p-4 text-sm text-foreground">AI answer</div>
+          <div className="panel-info rounded-2xl p-4 text-sm text-foreground">AI answer</div>
           <span className="hidden text-primary md:block">→</span>
-          <div className="card-default rounded-2xl p-4 text-sm text-foreground">Shortlist</div>
+          <div className="panel-info rounded-2xl p-4 text-sm text-foreground">Shortlist</div>
           <span className="hidden text-primary md:block">→</span>
-          <div className="card-primary rounded-2xl p-4 text-sm font-semibold text-foreground">Chosen company</div>
+          <div className="panel-accent rounded-2xl p-4 text-sm font-semibold text-foreground">Chosen company</div>
         </div>
       </div>
     </section>
   )
 }
-

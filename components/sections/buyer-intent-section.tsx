@@ -14,7 +14,7 @@ const buyerIntent = [
 
 export function BuyerIntentSection() {
   return (
-    <section className="section-neutral section-divider py-20 lg:py-28">
+    <section className="section-band-contrast section-divider py-20 lg:py-28">
       <div className="section-shell">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-semibold leading-tight text-foreground md:text-4xl">
@@ -23,7 +23,7 @@ export function BuyerIntentSection() {
           <p className="copy-lead mx-auto mt-4">We focus only on high buyer-intent AI queries.</p>
         </div>
         <div className="mx-auto mt-10 grid max-w-6xl gap-7 lg:grid-cols-2">
-          <article className="card-muted rounded-3xl p-7">
+          <article className="panel-info rounded-3xl p-7">
             <p className="text-sm font-semibold uppercase tracking-[0.12em] text-muted-foreground">Low intent</p>
             <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
               {informational.map((item) => (
@@ -35,7 +35,7 @@ export function BuyerIntentSection() {
             </ul>
           </article>
 
-          <article className="card-primary rounded-3xl p-7">
+          <article className="panel-accent rounded-3xl p-7">
             <p className="text-sm font-semibold uppercase tracking-[0.12em] text-primary">High intent</p>
             <ul className="mt-4 space-y-2 text-sm text-foreground">
               {buyerIntent.map((item) => (
@@ -54,4 +54,3 @@ export function BuyerIntentSection() {
     </section>
   )
 }
-

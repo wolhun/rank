@@ -8,11 +8,11 @@ const points = [
 
 export function VerificationStrip() {
   return (
-    <section className="section-raised section-divider py-10">
+    <section className="section-band-soft section-divider py-10">
       <div className="section-shell">
         <div className="mx-auto grid max-w-6xl gap-4 md:grid-cols-3">
           {points.map((item) => (
-            <article key={item.title} className="card-muted ui-motion rounded-2xl p-4">
+            <article key={item.title} className="panel-info ui-motion rounded-2xl p-4">
               <div className="flex items-start gap-3">
                 <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-primary/[0.11] text-primary">
                   <item.icon className="h-4 w-4" />
@@ -29,4 +29,3 @@ export function VerificationStrip() {
     </section>
   )
 }
-

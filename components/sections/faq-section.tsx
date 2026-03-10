@@ -29,18 +29,18 @@ export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   return (
-    <section id="faq" className="section-neutral section-divider py-24 lg:py-28">
+    <section id="faq" className="section-band-soft section-divider py-24 lg:py-28">
       <div className="section-shell">
         <div className="mx-auto mb-14 max-w-3xl text-center">
           <h2 className="text-3xl font-semibold leading-tight text-foreground md:text-4xl">Frequently asked questions</h2>
         </div>
 
-        <div className="mx-auto max-w-4xl space-y-4">
+        <div className="mx-auto max-w-4xl space-y-3">
           {faqs.map((faq, index) => (
-            <div key={faq.question} className="card-default overflow-hidden rounded-2xl">
+            <div key={faq.question} className="overflow-hidden rounded-2xl border border-[var(--line-subtle)] bg-[color-mix(in_oklab,var(--panel)_88%,white)]">
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="flex w-full items-center justify-between p-6 text-left"
+                className="flex w-full items-center justify-between px-6 py-5 text-left"
               >
                 <span className="pr-4 font-semibold text-foreground">{faq.question}</span>
                 <ChevronDown
@@ -50,7 +50,7 @@ export function FAQSection() {
                 />
               </button>
               {openIndex === index && (
-                <div className="px-6 pb-6">
+                <div className="px-6 pb-5">
                   <p className="text-sm leading-relaxed text-muted-foreground">{faq.answer}</p>
                 </div>
               )}
@@ -61,4 +61,3 @@ export function FAQSection() {
     </section>
   )
 }
-

@@ -21,15 +21,15 @@ export function ProofSection() {
             </a>
           </div>
 
-          <div className="card-default rounded-2xl p-6">
-            <div className="card-muted rounded-xl p-4">
+          <div className="panel-info rounded-2xl p-6">
+            <div className="panel-accent rounded-xl p-4">
               <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">Tracking feed</p>
               <div className="mt-4 space-y-3">
-                <div className="card-default rounded-lg p-3 text-sm text-foreground">
+                <div className="panel-info rounded-lg p-3 text-sm text-foreground">
                   Query: best basement waterproofing company in Toronto
                   <span className="mt-1 block text-xs text-primary">Your company detected in recommendation set</span>
                 </div>
-                <div className="card-default rounded-lg p-3 text-sm text-foreground">
+                <div className="panel-info rounded-lg p-3 text-sm text-foreground">
                   Query: top office cleaning company downtown
                   <span className="mt-1 block text-xs text-muted-foreground">Monitoring active</span>
                 </div>

@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { BadgeCheck, Clock3, DollarSign, ShieldCheck, Sparkles } from "lucide-react"
+import { SignalGrid } from "@/components/brand/signal-grid"
 
 const includes = [
   "Positioning for AI recommendations in your category",
@@ -27,13 +28,11 @@ const flow = [
 
 export function PricingSection() {
   return (
-    <section id="pricing" className="section-neutral section-divider py-24 lg:py-28">
+    <section id="pricing" className="section-band-contrast section-divider py-24 lg:py-28">
       <div className="section-shell">
-        <p className="compare-label">Pricing · Version A</p>
         <div className="mx-auto grid max-w-6xl gap-7 lg:grid-cols-[1fr_1.15fr]">
-          <div className="card-primary relative overflow-hidden rounded-3xl p-8 md:p-10">
-            <div className="pointer-events-none absolute -top-24 right-[-4.8rem] h-56 w-56 rounded-full bg-primary/[0.12] blur-3xl" />
-            <div className="pointer-events-none absolute -bottom-16 left-[-4rem] h-44 w-44 rounded-full bg-[rgba(200,169,107,0.14)] blur-3xl" />
+          <div className="panel-accent relative overflow-hidden rounded-3xl p-8 md:p-10">
+            <SignalGrid variant="pricing" className="left-[-26%] top-[-8%] h-[132%] w-[150%] opacity-26" />
 
             <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/[0.08] px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.12em] text-primary">
               <Sparkles className="h-3.5 w-3.5" />
@@ -44,12 +43,12 @@ export function PricingSection() {
               One price. Pay only after results.
             </h2>
 
-            <div className="card-default mt-6 rounded-2xl px-6 py-5">
+            <div className="panel-info mt-6 rounded-2xl px-6 py-5">
               <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">Fixed price</p>
               <p className="mt-1 text-5xl font-semibold tracking-tight text-foreground md:text-6xl">$X,XXX</p>
             </div>
 
-            <ul className="mt-6 space-y-3">
+            <ul className="mt-6 space-y-3 relative">
               {includes.map((item) => (
                 <li key={item} className="flex items-start gap-3 text-sm text-foreground/90">
                   <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/[0.10] text-primary">
@@ -65,7 +64,7 @@ export function PricingSection() {
             </Button>
           </div>
 
-          <div className="card-default rounded-3xl p-8 md:p-10">
+          <div className="panel-info rounded-3xl p-8 md:p-10">
             <p className="text-sm font-semibold uppercase tracking-[0.12em] text-muted-foreground">When you pay</p>
             <p className="mt-3 text-base leading-relaxed text-foreground">
               You only pay after the agreed result is achieved.
@@ -73,7 +72,7 @@ export function PricingSection() {
 
             <div className="mt-7 space-y-4">
               {flow.map((step, index) => (
-                <div key={step.title} className="card-muted relative rounded-2xl p-5">
+                <div key={step.title} className="panel-info relative rounded-2xl p-5">
                   {index < flow.length - 1 ? (
                     <span className="absolute bottom-[-0.9rem] left-10 h-4 w-px bg-border" />
                   ) : null}
@@ -90,7 +89,7 @@ export function PricingSection() {
               ))}
             </div>
 
-            <div className="card-default mt-7 flex items-center gap-3 rounded-2xl p-4">
+            <div className="panel-accent mt-7 flex items-center gap-3 rounded-2xl p-4">
               <Clock3 className="h-5 w-5 text-primary" />
               <p className="text-sm text-muted-foreground">Most categories are delivered in several weeks.</p>
             </div>

@@ -12,9 +12,9 @@ export function VideoSectionB() {
             Simple steps. No effort from your side. Clear rules. Pay only after results.
           </p>
         </div>
-        <div className="mx-auto mt-8 max-w-5xl rounded-3xl border border-border bg-card p-4 md:p-5">
-          <div className="relative aspect-video overflow-hidden rounded-2xl border border-border bg-[radial-gradient(circle_at_20%_20%,rgba(20,58,90,0.22),transparent_44%),radial-gradient(circle_at_78%_78%,rgba(200,159,99,0.22),transparent_46%),#f5f5f2]">
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(17,24,39,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(17,24,39,0.03)_1px,transparent_1px)] bg-[length:30px_30px]" />
+        <div className="panel-info mx-auto mt-8 max-w-5xl rounded-3xl p-4 md:p-5">
+          <div className="relative aspect-video overflow-hidden rounded-2xl border border-[var(--line-subtle)] bg-[color-mix(in_oklab,var(--panel-accent)_90%,white)]">
+            <div className="absolute inset-0 opacity-65 [background-image:linear-gradient(var(--line-subtle)_1px,transparent_1px),linear-gradient(90deg,var(--line-subtle)_1px,transparent_1px)] [background-size:34px_34px]" />
             <div className="absolute left-4 top-4 rounded-md border border-border/70 bg-background/80 px-2 py-1 text-[10px] font-mono uppercase tracking-[0.12em] text-muted-foreground">
               Prompt → Answer → Explain
             </div>
@@ -34,4 +34,3 @@ export function VideoSectionB() {
     </section>
   )
 }
-

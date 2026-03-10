@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import { ArrowRight } from "lucide-react"
 import { HeroRecommendationDemo } from "@/components/hero-recommendation-demo"
 import { Button } from "@/components/ui/button"
+import { SignalGrid } from "@/components/brand/signal-grid"
 
 const platforms = [
   {
@@ -48,11 +49,11 @@ export function HeroSection() {
   const platform = platforms[activePlatform]
 
   return (
-    <section id="hero" className="section-neutral section-divider relative overflow-hidden py-24 lg:py-28">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_18%,rgba(14,42,71,0.12),transparent_40%),radial-gradient(circle_at_14%_38%,rgba(200,169,107,0.14),transparent_42%)]" />
+    <section id="hero" className="section-neutral section-divider section-spotlight relative overflow-hidden py-24 lg:py-28">
+      <div className="signal-grid-bg opacity-40" />
+      <SignalGrid variant="hero" className="left-1/2 top-1/2 h-[140%] w-[150%] -translate-x-1/2 -translate-y-1/2 opacity-35" />
 
       <div className="section-shell relative z-10">
-        <p className="compare-label">Hero · Version A</p>
         <div className="grid items-center gap-14 lg:grid-cols-[1.02fr_1fr]">
           <div className="space-y-8">
             <div className="flex flex-wrap items-center gap-2.5">
@@ -88,7 +89,7 @@ export function HeroSection() {
             </div>
 
             <div className="flex flex-wrap gap-3">
-              <Button size="lg" className="ui-motion h-12 gap-2 px-7 text-base font-medium">
+              <Button size="lg" className="ui-motion h-12 gap-2 rounded-xl px-7 text-base font-medium shadow-[0_18px_38px_-24px_rgba(11,25,43,0.7)]">
                 Check if your business qualifies
                 <ArrowRight className="h-4 w-4" />
               </Button>
@@ -96,7 +97,10 @@ export function HeroSection() {
           </div>
 
           <div className="mx-auto w-full max-w-2xl lg:mx-0">
-            <HeroRecommendationDemo platform={platform} />
+            <div className="panel-accent relative rounded-[1.55rem] p-3 md:p-4">
+              <div className="absolute inset-x-8 top-0 h-px bg-[linear-gradient(to_right,transparent,var(--signal-line),transparent)]" />
+              <HeroRecommendationDemo platform={platform} />
+            </div>
           </div>
         </div>
       </div>

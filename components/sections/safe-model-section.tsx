@@ -14,7 +14,7 @@ const thisModel = [
 
 export function SafeModelSection() {
   return (
-    <section className="section-raised section-divider py-20 lg:py-28">
+    <section className="section-band-soft section-divider py-20 lg:py-28">
       <div className="section-shell">
         <div className="mx-auto mb-14 max-w-3xl text-center">
           <h2 className="text-3xl font-semibold leading-tight text-foreground md:text-4xl">
@@ -24,7 +24,7 @@ export function SafeModelSection() {
         </div>
 
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-2">
-          <article className="card-muted rounded-2xl p-7">
+          <article className="panel-info rounded-2xl p-7">
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
               Traditional SEO / GEO services
             </p>
@@ -40,7 +40,7 @@ export function SafeModelSection() {
             </ul>
           </article>
 
-          <article className="card-primary rounded-2xl p-7">
+          <article className="panel-accent rounded-2xl p-7">
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">
               AI recommendation positioning
             </p>

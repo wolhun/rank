@@ -19,7 +19,7 @@ const benefits = [
 
 export function BenefitsSection() {
   return (
-    <section id="benefits" className="section-raised section-divider py-20 lg:py-28">
+    <section id="benefits" className="section-neutral section-divider py-20 lg:py-28">
       <div className="section-shell">
         <div className="mx-auto mb-14 max-w-3xl text-center">
           <h2 className="text-3xl font-semibold leading-tight text-foreground md:text-4xl">
@@ -27,8 +27,8 @@ export function BenefitsSection() {
           </h2>
         </div>
         <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2">
-          {benefits.map((item) => (
-            <article key={item.title} className="card-default rounded-2xl p-7">
+          {benefits.map((item, idx) => (
+            <article key={item.title} className={idx % 2 ? "panel-accent rounded-2xl p-7" : "panel-info rounded-2xl p-7"}>
               <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>
               <p className="copy-body mt-3">{item.text}</p>
             </article>

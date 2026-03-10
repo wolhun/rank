@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight, CircleDot, ListChecks, MessageSquareQuote, Sparkles } from "lucide-react"
+import { SignalGrid } from "@/components/brand/signal-grid"
 
 const sections = [
   {
@@ -42,11 +43,11 @@ const sections = [
 
 function VisualCardOne() {
   return (
-    <div className="card-default relative overflow-hidden rounded-2xl p-4 md:p-5">
+    <div className="panel-info relative overflow-hidden rounded-2xl p-4 md:p-5">
       <div className="overflow-hidden rounded-xl border border-border bg-background/90">
-        <div className="aspect-[16/10] w-full bg-[linear-gradient(135deg,color-mix(in_oklab,var(--primary)_12%,white),color-mix(in_oklab,var(--accent)_18%,white))] p-3">
+        <div className="aspect-[16/10] w-full bg-[linear-gradient(135deg,color-mix(in_oklab,var(--primary)_12%,white),color-mix(in_oklab,var(--accent)_14%,white))] p-3">
           <div className="flex h-full items-end justify-between">
-            <p className="rounded-md border border-border/80 bg-background/88 px-2.5 py-1 text-[11px] font-mono uppercase tracking-[0.12em] text-muted-foreground">
+            <p className="rounded-md border border-border/90 bg-background/92 px-2.5 py-1 text-[11px] font-mono uppercase tracking-[0.12em] text-muted-foreground">
               IMG SLOT
             </p>
             <p className="rounded-md bg-primary px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-primary-foreground">
@@ -67,7 +68,7 @@ function VisualCardOne() {
 
 function VisualCardTwo() {
   return (
-    <div className="card-primary rounded-2xl p-4 md:p-5">
+    <div className="panel-accent rounded-2xl p-4 md:p-5">
       <div className="space-y-3">
         <div className="rounded-lg border border-border bg-background/90 p-3">
           <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">Step 1</p>
@@ -94,7 +95,7 @@ function VisualCardTwo() {
 
 function VisualCardThree() {
   return (
-    <div className="card-muted rounded-2xl p-4 md:p-5">
+    <div className="panel-info rounded-2xl p-4 md:p-5">
       <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">Lead impact</p>
       <div className="mt-3 space-y-2">
         <div className="rounded-lg border border-border bg-background/85 p-3 text-sm text-foreground">Trust starts high</div>
@@ -107,7 +108,7 @@ function VisualCardThree() {
 
 function DefaultVisual({ index }: { index: number }) {
   return (
-    <div className="card-default relative overflow-hidden rounded-2xl p-5">
+    <div className="panel-info relative overflow-hidden rounded-2xl p-5">
       <div className="absolute inset-0 bg-[linear-gradient(135deg,color-mix(in_oklab,var(--primary)_8%,white),color-mix(in_oklab,var(--accent)_10%,white))]" />
       <div className="relative space-y-3">
         <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background/80 px-3 py-1.5 text-xs font-mono tracking-[0.12em] text-muted-foreground">
@@ -145,12 +146,20 @@ function StoryVisual({ index }: { index: number }) {
 
 export function StorytellingSections() {
   return (
-    <section className="section-raised py-18 lg:py-24">
+    <section className="section-band-soft section-divider py-18 lg:py-24">
       <div className="section-shell space-y-8">
         {sections.map((item, index) => (
-          <article key={item.id} className="card-default section-divider rounded-3xl p-6 md:p-8">
-            <div className="grid items-start gap-6 lg:grid-cols-[1.15fr_0.85fr]">
-              <div>
+          <article key={item.id} className="section-divider relative overflow-hidden rounded-3xl border border-[var(--line-subtle)] bg-[color-mix(in_oklab,var(--panel)_92%,white)] p-6 md:p-8">
+            <SignalGrid
+              variant="story"
+              className={`top-1/2 h-[130%] w-full -translate-y-1/2 opacity-25 ${index % 2 === 0 ? "right-[-30%]" : "left-[-30%] scale-x-[-1]"}`}
+            />
+            <div
+              className={`relative grid items-start gap-6 lg:grid-cols-[1.15fr_0.85fr] ${
+                index % 2 ? "lg:[&>*:first-child]:order-2 lg:[&>*:last-child]:order-1" : ""
+              }`}
+            >
+              <div className={index % 2 ? "lg:pl-6" : "lg:pr-6"}>
                 <p className="mb-3 font-mono text-xs uppercase tracking-[0.13em] text-muted-foreground">Story section {index + 1}</p>
                 <h2 className="text-balance text-2xl font-semibold leading-tight text-foreground whitespace-pre-line md:text-3xl">
                   {item.headline}
@@ -164,7 +173,7 @@ export function StorytellingSections() {
                 </div>
                 {item.keyLine ? <p className="mt-4 text-base font-semibold text-foreground">{item.keyLine}</p> : null}
                 {item.cta ? (
-                  <Button className="ui-motion mt-6 h-11 gap-2 px-6 text-sm">
+                  <Button className="ui-motion mt-6 h-11 gap-2 rounded-xl px-6 text-sm">
                     {item.cta}
                     <ArrowRight className="h-4 w-4" />
                   </Button>
