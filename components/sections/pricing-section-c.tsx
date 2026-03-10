@@ -16,7 +16,7 @@ const risk = [
 
 export function PricingSectionC() {
   return (
-    <section className="section-neutral section-divider py-16 lg:py-20">
+    <section className="section-band-contrast section-divider py-16 lg:py-20">
       <div className="section-shell">
         <div className="mx-auto max-w-6xl">
           <div className="mx-auto mb-8 max-w-4xl text-center">

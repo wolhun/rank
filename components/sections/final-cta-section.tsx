@@ -3,7 +3,7 @@ import { SignalGrid } from "@/components/brand/signal-grid"
 
 export function FinalCTASection() {
   return (
-    <section className="section-band-contrast section-spotlight py-24 lg:py-28">
+    <section className="section-band-contrast section-divider section-spotlight py-24 lg:py-28">
       <div className="section-shell">
         <div className="panel-accent relative mx-auto max-w-4xl overflow-hidden rounded-3xl px-8 py-12 text-center md:px-12">
           <SignalGrid variant="cta" className="left-[-26%] top-[-20%] h-[150%] w-[160%] opacity-28" />

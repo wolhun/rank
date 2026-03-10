@@ -1,6 +1,6 @@
 export function WhyNeededSection() {
   return (
-    <section className="section-band-contrast section-divider py-20 lg:py-24">
+    <section className="section-neutral section-divider py-20 lg:py-24">
       <div className="section-shell">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-semibold leading-tight text-foreground md:text-4xl">

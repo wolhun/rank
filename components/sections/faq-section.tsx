@@ -29,7 +29,7 @@ export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   return (
-    <section id="faq" className="section-band-soft section-divider py-24 lg:py-28">
+    <section id="faq" className="section-neutral section-divider py-24 lg:py-28">
       <div className="section-shell">
         <div className="mx-auto mb-14 max-w-3xl text-center">
           <h2 className="text-3xl font-semibold leading-tight text-foreground md:text-4xl">Frequently asked questions</h2>

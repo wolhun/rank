@@ -14,7 +14,7 @@ const thisModel = [
 
 export function SafeModelSection() {
   return (
-    <section className="section-band-soft section-divider py-20 lg:py-28">
+    <section className="section-neutral section-divider py-20 lg:py-28">
       <div className="section-shell">
         <div className="mx-auto mb-14 max-w-3xl text-center">
           <h2 className="text-3xl font-semibold leading-tight text-foreground md:text-4xl">

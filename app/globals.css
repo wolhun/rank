@@ -37,9 +37,9 @@
   --sidebar-accent-foreground: #202939;
   --sidebar-border: #dfd9cf;
   --sidebar-ring: #143a5a;
-  --canvas: #f7f6f3;
-  --band-soft: #f0ede7;
-  --band-contrast: #e9e4dc;
+  --canvas: #f8f7f4;
+  --band-soft: #eee9e1;
+  --band-contrast: #e2dbcf;
   --panel: #ffffff;
   --panel-accent: #f4f7fb;
   --line-subtle: rgba(17, 24, 39, 0.1);
@@ -67,9 +67,9 @@
   --border: #dfd9cf;
   --input: #f2f0ea;
   --ring: #143a5a;
-  --canvas: #f7f6f3;
-  --band-soft: #f0ede7;
-  --band-contrast: #e9e4dc;
+  --canvas: #f8f7f4;
+  --band-soft: #eee9e1;
+  --band-contrast: #e2dbcf;
   --panel: #ffffff;
   --panel-accent: #f4f7fb;
   --line-subtle: rgba(17, 24, 39, 0.1);
@@ -92,9 +92,9 @@
   --border: #d3d9e2;
   --input: #edf1f6;
   --ring: #334155;
-  --canvas: #f3f4f6;
-  --band-soft: #ebedf2;
-  --band-contrast: #e3e7ee;
+  --canvas: #f4f6f9;
+  --band-soft: #e9edf3;
+  --band-contrast: #dce3ec;
   --panel: #fbfcfd;
   --panel-accent: #eef3f9;
   --line-subtle: rgba(31, 41, 55, 0.12);
@@ -117,9 +117,9 @@
   --border: #d4e1eb;
   --input: #edf4fa;
   --ring: #1f4f78;
-  --canvas: #f4f8fb;
-  --band-soft: #eaf1f7;
-  --band-contrast: #e1ebf5;
+  --canvas: #f4f8fc;
+  --band-soft: #e7f0f9;
+  --band-contrast: #d9e7f4;
   --panel: #ffffff;
   --panel-accent: #eff5fb;
   --line-subtle: rgba(23, 36, 51, 0.11);
@@ -142,9 +142,9 @@
   --border: #cfe1d7;
   --input: #eaf3ed;
   --ring: #1f4f45;
-  --canvas: #f3f8f5;
-  --band-soft: #eaf2ed;
-  --band-contrast: #e0ebe4;
+  --canvas: #f4f9f6;
+  --band-soft: #e7f1ea;
+  --band-contrast: #dbe9e0;
   --panel: #fcfffd;
   --panel-accent: #edf6f1;
   --line-subtle: rgba(23, 40, 35, 0.11);
@@ -216,7 +216,7 @@
 
   .section-neutral {
     position: relative;
-    background: transparent;
+    background: var(--canvas);
   }
 
   .section-band-soft {
@@ -226,7 +226,8 @@
 
   .section-band-contrast {
     position: relative;
-    background: var(--band-contrast);
+    background:
+      linear-gradient(180deg, color-mix(in oklab, var(--band-contrast) 92%, white) 0%, var(--band-contrast) 100%);
   }
 
   .section-raised {
@@ -259,6 +260,19 @@
     width: min(86vw, 980px);
     height: 1px;
     background: linear-gradient(to right, transparent, var(--line-subtle), transparent);
+  }
+
+  .section-band-soft::after,
+  .section-band-contrast::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: min(94vw, 1280px);
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--line-strong), transparent);
+    opacity: 0.75;
   }
 
   .section-spotlight::after {
